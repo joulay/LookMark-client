@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Link, Redirect, Route } from 'react-router-dom';
-import RegistrationForm from './registration-form';
+import { Link, Redirect } from 'react-router-dom';
+
 import LoginForm from './login-form';
 
 function LandingPage(props) {
@@ -12,7 +12,7 @@ function LandingPage(props) {
         <div className="landing-page">
             <LoginForm />
             <Link to="/register">Create an account</Link>
-            <Route exact path="/register" component={RegistrationForm} />            
+                      
         </div>
     )
 }
