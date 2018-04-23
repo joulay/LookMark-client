@@ -3,8 +3,7 @@ import React from 'react';
 
 export default function RegistrationForm(){
     return (
-        <form className="login-form"> 
-            
+        <form className="registration-form"> 
             <label htmlFor="fullName">FULL NAME</label> <br />
             <input 
                 type="text" 
