@@ -4,7 +4,8 @@ import './home.css';
 import LandingPage from './landing-page';
 import RegistrationForm from './registration-form';
 import UpcomingWeddings from './upcoming-weddings';
-import NewClient from './new-client';
+import NewClient from './client-form';
+import ClientDetail from './client-detail';
 
 export default function Home() {
     return (
@@ -18,6 +19,7 @@ export default function Home() {
               <Route exact path="/register" component={RegistrationForm} />
               <Route exact path="/home" component={UpcomingWeddings} />
               <Route exact path="/newclient" component={NewClient} />
+              <Route exact path="/clientdetail" component={ClientDetail} />
             </Switch>
           </main>
         </div>
