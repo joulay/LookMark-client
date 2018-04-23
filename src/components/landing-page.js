@@ -16,10 +16,7 @@ function LandingPage(props) {
         </div>
     )
 }
-            // <LoginForm />
-            
-            // <Link to="/register">Create an account</Link>
-            // <RegistrationForm />
+        
 // const mapStateToProps = state => ({
 //     loggedIn: state.auth.currentUser !== null
 // })   mapStateToProps
