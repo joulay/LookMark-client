@@ -4,6 +4,7 @@ import React from 'react';
 
 import './home.css';
 import RegistrationForm from './registration-form';
+import LoginForm from './login-form';
 
 export default function Home() {
 
@@ -12,7 +13,7 @@ export default function Home() {
     return (
       <div className="Home">
         <RegistrationForm />
-
+        <LoginForm />
       </div>
     );
   
