@@ -1,39 +1,37 @@
 import React from 'react';
 import { Field, reduxForm} from 'redux-form';
 
-
-
 class RegistrationForm extends React.Component {
     onSubmit(values) {
         
     }
     render() {
         return (
-            <form className="login-form">
-                <label htmlFor="fullName">FULL NAME</label>
+            <form className="login-form"> 
+                <label htmlFor="fullName">FULL NAME</label> <br />
                 <Field 
                     component="input" 
                     type="text" 
                     name="fullName" 
-                />
-                <label htmlFor="username">USERNAME</label>
+                /> <br />
+                <label htmlFor="username">USERNAME</label> <br />
                 <Field 
                     component="input" 
                     type="text" 
                     name="username" 
-                />
-                <label htmlFor="email">EMAIL</label>
+                /> <br />
+                <label htmlFor="email">EMAIL</label> <br />
                 <Field 
                     component="input" 
                     type="text" 
                     name="email" 
-                />
-                <label htmlFor="password">PASSWORD</label>
+                /> <br />
+                <label htmlFor="password">PASSWORD</label> <br />
                 <Field 
                     component="input" 
                     type="text" 
                     name="password" 
-                />
+                /> <br />
                 <button
                     type="submit">
                     CREATE AN ACCOUNT 

@@ -1,27 +1,22 @@
-import React, { Component } from 'react';
-import './home.css';
-import { connect } from 'react-redux';
+import React from 'react';
+
 // import { Route } from 'react-router-dom';
-// import { fetchUsers } from './actions';
 
+import './home.css';
+import RegistrationForm from './registration-form';
 
-
-class Home extends Component {
+export default function Home() {
 
   
-  render() {
   
     return (
-      <div className="App">
-        
+      <div className="Home">
+        <RegistrationForm />
 
       </div>
     );
-  }
+  
 }
 
 
 
-export default connect()(Home);
-
-//export default withRouter(connect(mapStateToProps)(App)); + import withRouter in react-router-dom
