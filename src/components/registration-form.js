@@ -36,5 +36,4 @@ export default function RegistrationForm(){
 //     form: 'registerUser'
 // })(RegistrationForm);  
 
-
 //validations

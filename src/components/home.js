@@ -10,7 +10,7 @@ export default function Home() {
           
           <main>
             <Switch>
-              <Redirect exact from="/" to="/home" />
+              <Redirect exact from="/" to="/signup" />
               <Route exact path="/signup" component={LandingPage} />
             </Switch>
           </main>
