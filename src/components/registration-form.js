@@ -35,3 +35,6 @@ export default function RegistrationForm(){
 // export default reduxForm({
 //     form: 'registerUser'
 // })(RegistrationForm);  
+
+
+//validations
