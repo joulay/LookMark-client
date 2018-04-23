@@ -6,6 +6,8 @@ import RegistrationForm from './registration-form';
 import UpcomingWeddings from './upcoming-weddings';
 import NewClient from './client-form';
 import ClientDetail from './client-detail';
+import Edit from './edit';
+import Photos from './photo-upload';
 import Notes from './notes';
 
 export default function Home() {
@@ -21,6 +23,8 @@ export default function Home() {
               <Route exact path="/home" component={UpcomingWeddings} />
               <Route exact path="/newclient" component={NewClient} />
               <Route exact path="/clientdetail" component={ClientDetail} />
+              <Route exact path="/edit" component={Edit} />
+              <Route exact path="/photos" component={Photos} />
               <Route exact path="/notes" component={Notes} />
             </Switch>
           </main>

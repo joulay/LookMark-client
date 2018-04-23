@@ -1,10 +1,15 @@
 import React from 'react';
+import Photos from './photo-upload';
 import Notes from './notes';
+import NewClient from './client-form';
 
-export function Edit() {
+export default function Edit() {
 
     return (
-        
-        <Notes />
+        <div>
+            <Photos />
+            <Notes />
+            <NewClient />
+        </div>
     )
 }
