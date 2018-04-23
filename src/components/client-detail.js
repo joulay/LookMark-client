@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Notes from './notes';
 
 
 export default function ClientDetail() {
@@ -11,18 +11,14 @@ return (
         </button>
 
         <p> Image.jpg </p>
-        <textarea rows="10" cols="50">
-            ALLERGIES:
-            PRODUCTS USED:
-        </textarea>
+        <Notes />
 
         <p> FIRST NAME LAST NAME </p>
         <p> EMAIL </p>
         <p> PHONE NUMBER </p>
         <p> WEDDING DATE </p>
         {/* <Edit />
-        <Image />
-        <Notes />  */}
+        <Image />  */}
     </div>
     )
 }
