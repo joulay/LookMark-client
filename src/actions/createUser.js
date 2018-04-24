@@ -15,8 +15,9 @@ export const createNewUserSuccess = () => ({
 
 
 export const CREATE_NEW_USER_ERROR= 'CREATE_NEW_USER_ERROR'
-export const createNewUserError = () => dispatch => ({
+export const createNewUserError = (error) => dispatch => ({
     type:'CREATE_NEW_USER_ERROR',
+    error
 
 })
 
@@ -25,6 +26,7 @@ export const newUser = user => dispatch => {
     return fetch(`${API_BASE_URL}/users`, {
         method: 'POST',
         headers: {
+            'Accept': 'application/json',
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(user)
@@ -37,6 +39,7 @@ export const newUser = user => dispatch => {
         })
         .catch(err => console.log(err))
         .catch(err => {
+            dispatch(createNewUserError(err))
             const {reason, message, location} = err;
             if (reason === 'ValidationError') {
                 return Promise.reject(
