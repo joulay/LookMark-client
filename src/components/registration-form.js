@@ -2,23 +2,24 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 // import { combineUser } from '../reducers/user';
 import { Field, reduxForm } from 'redux-form';
-import  { createNewUser } from '../actions/createUser';
+import  { newUser } from '../actions/createUser';
 import Input from './input';
-import { login } from '../actions/auth';
+// import { login } from '../actions/auth';
 
 class RegistrationForm extends React.Component{
     onSubmit(values) {
+        
         const {fullName, email, username, password} = values;
         const user = {fullName, email, username, password};
+        console.log(user);
         return this.props
-            .dispatch(createNewUser(user))
-            .then(()=>this.props.dispatch(login(username, password)))
+            .dispatch(newUser(user))
+            // .then(()=>this.props.dispatch(login(username, password)))
     }
     render() {
     return (
         <div>
             <Link to="/signup">Back</Link>
-
             <form 
                 className="registration-form" 
                 onSubmit={this.props.handleSubmit(values =>

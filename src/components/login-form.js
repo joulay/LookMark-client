@@ -22,5 +22,5 @@ export default function LoginForm() {
 }
 
 
-//create an account link
+
 //forgot your password link

@@ -21,17 +21,21 @@ export const createNewUserError = () => dispatch => ({
 })
 
 
-
 export const newUser = user => dispatch => {
     return fetch(`${API_BASE_URL}/users`, {
         method: 'POST',
         headers: {
-            'Accept': 'application/json',
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(user)
     })
-        .then(res => res.json())
+        .then(res => {
+            return res.json()})
+        .then(()=> {
+            return dispatch(createNewUserSuccess())
+            
+        })
+        .catch(err => console.log(err))
         .catch(err => {
             const {reason, message, location} = err;
             if (reason === 'ValidationError') {
