@@ -8,7 +8,7 @@ const fetchUsersSuccess = (users) => ({
 
 export const fetchUsers = () => {
     return (dispatch) => {
-        fetch(`${API_BASE_URL}/test`)
+        fetch(`${API_BASE_URL}/api/users`)
         .then(response => response.json())
         .then(users => dispatch(fetchUsersSuccess(users)))
         .catch(err => console.log(err))

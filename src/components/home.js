@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Redirect, Switch} from 'react-router-dom';
 import './home.css';
-import LandingPage from './landing-page';
+import SignIn from './sign-in';
 import RegistrationForm from './registration-form';
 import UpcomingWeddings from './upcoming-weddings';
 import NewClient from './client-form';
@@ -9,16 +9,19 @@ import ClientDetail from './client-detail';
 import Edit from './edit';
 import Photos from './photo-upload';
 import Notes from './notes';
+import { connect } from 'react-redux';
 
-export default function Home() {
+function Home(props) {
+    // props.dispatch(fetchUsers());
     return (
       <Router>
         <div className="Home">
         {/*<Sidebar /> for hamburger*/}
+
           <main>
             <Switch>
               <Redirect exact from="/" to="/signup" />
-              <Route exact path="/signup" component={LandingPage} />
+              <Route exact path="/signup" component={SignIn} />
               <Route exact path="/register" component={RegistrationForm} />
               <Route exact path="/home" component={UpcomingWeddings} />
               <Route exact path="/newclient" component={NewClient} />
@@ -34,8 +37,6 @@ export default function Home() {
   
 }
 
+export default connect()(Home);
 
-
-
-//top level links here 
 

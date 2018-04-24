@@ -2,14 +2,31 @@ const initialState = {
     data: []
 }
 
-const userReducer = (state = initialState, action) => {
+export const userReducer = (state = initialState, action) => {
     if(action.type === 'FETCH_USERS_SUCCESS') {
-        return {
-            ...state,
-            data: action.users, 
-        }    
+        return Object.assign({}, state, {
+            data: action.users
+        }) 
+             
     }
     return state
 }
 
-export default userReducer;
+
+
+
+const initialStateCU = {
+    newUser: '',
+    loggedInUser: ''
+
+}
+export const combineUser = (state = initialStateCU, action) => {
+    if(action.type=== 'CREATE_NEW_USER') {
+        return Object.assign({}, state, {
+            newUser: action.newUser
+        })
+    }
+    return state
+}
+
+

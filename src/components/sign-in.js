@@ -4,12 +4,12 @@ import { Link, Redirect } from 'react-router-dom';
 
 import LoginForm from './login-form';
 
-function LandingPage(props) {
+function SignIn(props) {
     if(props.loggedIn) {
         return <Redirect to="/home" />;
     }
     return (
-        <div className="landing-page">
+        <div className="sign-in">
             <LoginForm />
             <Link to="/register">Create an account</Link>
                       
@@ -21,4 +21,4 @@ function LandingPage(props) {
 //     loggedIn: state.auth.currentUser !== null
 // })   mapStateToProps
 
-export default connect()(LandingPage);
+export default connect()(SignIn);
