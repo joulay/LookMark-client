@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 // import { combineUser } from '../reducers/user';
-import { Field, reduxForm} from 'redux-form';
+import { Field, reduxForm } from 'redux-form';
 import  { createNewUser } from '../actions/createUser';
 import Input from './input';
 import { login } from '../actions/auth';
