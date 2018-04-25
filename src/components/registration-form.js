@@ -7,19 +7,27 @@ import Input from './input';
 import { login } from '../actions/auth';
 
 class RegistrationForm extends React.Component{
-    onSubmit(values) {
-        
+    constructor(props) {
+        super(props) 
+
+        this.state={
+            msg:""
+        }
+    }
+
+    onSubmit(values) {    
         const {fullName, email, username, password} = values;
         const user = {fullName, email, username, password};
         console.log(user);
         return this.props
             .dispatch(newUser(user))
-            .then(()=>this.props.dispatch(login(username, password)))
-    }
+            .then(this.setState({msg: 'Thank you for registering. Please log in'})
+            )}
     render() {
     return (
         <div>
             <Link to="/signup">Back</Link>
+            {this.state.msg ? this.state.msg : ''}
             <form 
                 className="registration-form" 
                 onSubmit={this.props.handleSubmit(values =>

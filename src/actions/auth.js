@@ -42,18 +42,19 @@ const storeAuthInfo = (authToken, dispatch) => {
 
 export const login = (username, password) => dispatch => {
     dispatch(authRequest());
-    return (
-        fetch(`${API_BASE_URL}/auth/login`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                username,
-                password
-            })
+    return fetch(`${API_BASE_URL}/login`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            username,
+            password
         })
-            .then(res => res.json())
+    })
+            .then(res => {
+                res.json()
+            })
             .then(({authToken}) => storeAuthInfo(authToken, dispatch))
             .catch(err => {
                 const {code} = err;
@@ -68,7 +69,7 @@ export const login = (username, password) => dispatch => {
                     })
                 );
             })
-    );
+   
 };
 
 export const refreshAuthToken = () => (dispatch, getState) => {

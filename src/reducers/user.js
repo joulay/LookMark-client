@@ -22,7 +22,6 @@ const initialStateCU = {
 }
 export const combineUser = (state = initialStateCU, action) => {
     if(action.type=== 'CREATE_NEW_USER_SUCCESS') {
-        console.log('worked');
         return Object.assign({}, state, {
             newUser: action.newUser
         })

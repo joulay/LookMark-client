@@ -26,18 +26,17 @@ export const newUser = user => dispatch => {
     return fetch(`${API_BASE_URL}/users`, {
         method: 'POST',
         headers: {
-            'Accept': 'application/json',
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(user)
     })
         .then(res => {
+            console.log(res);
             return res.json()})
         .then(()=> {
             return dispatch(createNewUserSuccess())
             
         })
-        .catch(err => console.log(err))
         .catch(err => {
             dispatch(createNewUserError(err))
             const {reason, message, location} = err;

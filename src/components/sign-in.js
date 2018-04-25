@@ -11,6 +11,7 @@ function SignIn(props) {
     return (
         <div className="sign-in">
             <LoginForm />
+            <p></p>
             <Link to="/register">Create an account</Link>
                       
         </div>

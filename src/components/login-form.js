@@ -52,6 +52,3 @@ export default reduxForm({
     form: 'login',
     onSubmitFail: (errors, dispatch) => dispatch(focus('login', 'username'))
 })(LoginForm);
-
-
-//forgot your password link
