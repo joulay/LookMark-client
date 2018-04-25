@@ -12,7 +12,10 @@ export default function Photos() {
 )
 
 }
-
+//upload file locally and keep track of path (i.e /upload/cocainebear.png)
+//save this path/directory to mongo
+//whenever it's called from frontend, get request(query) /upload/cocainebear.png
+//in react <img src={mongo.filepath} />
 
 // {/* <device type="media" onchange="update(this.data)"></device>
 // <script>

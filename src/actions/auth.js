@@ -42,6 +42,7 @@ const storeAuthInfo = (authToken, dispatch) => {
 
 export const login = (username, password) => dispatch => {
     dispatch(authRequest());
+
     return fetch(`${API_BASE_URL}/login`, {
         method: 'POST',
         headers: {
@@ -52,23 +53,24 @@ export const login = (username, password) => dispatch => {
             password
         })
     })
-            .then(res => {
-                res.json()
-            })
-            .then(({authToken}) => storeAuthInfo(authToken, dispatch))
-            .catch(err => {
-                const {code} = err;
-                const message =
-                    code === 401
-                        ? 'Incorrect username or password'
-                        : 'Unable to login, please try again';
-                dispatch(authError(err));
-                return Promise.reject(
-                    new SubmissionError({
-                        _error: message
-                    })
-                );
-            })
+        .then(res => {
+            console.log('res', res);
+            res.json()
+        })
+        .then(({authToken}) => storeAuthInfo(authToken, dispatch))
+        .catch(err => {
+            const {code} = err;
+            const message =
+                code === 401
+                    ? 'Incorrect username or password'
+                    : 'Unable to login, please try again';
+            dispatch(authError(err));
+            return Promise.reject(
+                new SubmissionError({
+                    _error: message
+                })
+            );
+        })
    
 };
 

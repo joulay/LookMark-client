@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { Field, reduxForm } from 'redux-form';
 import  { newUser } from '../actions/createUser';
 import Input from './input';
-import { login } from '../actions/auth';
+// import { login } from '../actions/auth';
 
 class RegistrationForm extends React.Component{
     constructor(props) {
