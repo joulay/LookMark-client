@@ -6,7 +6,7 @@ export default class NewClient extends React.Component {
         const {firstName, lastName, email, phone, weddingDate, location} = values;
         const client = {firstName, lastName, email, phone, weddingDate, location};
         console.log(client);
-        return this.props
+        // return this.props
     }
     render() {
     return (
