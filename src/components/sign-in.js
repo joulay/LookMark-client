@@ -18,8 +18,8 @@ function SignIn(props) {
     )
 }
         
-// const mapStateToProps = state => ({
-//     loggedIn: state.auth.currentUser !== null
-// })   mapStateToProps
+const mapStateToProps = state => ({
+    loggedIn: state.auth.currentUser !== null
+})  
 
-export default connect()(SignIn);
+export default connect(mapStateToProps)(SignIn);

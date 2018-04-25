@@ -5,13 +5,20 @@ export default function Photos() {
     
     return (
         <div>
-            <input type="file" accept="image/*" capture="camera" />
-            <p>Image.jpg, Image2.jpg, Image3.jpg</p>
-
+            <h2>Upload Photo</h2>
+            <form action="/upload" enctype="multipart/form-data" method="post">
+                <input type="file" name="file" id="file" accept="image/*" capture="camera" />
+                <label for="file" class="custom-file-label">Choose File</label>
+                <input type="submit" value="Submit" class="image-submit-button" />
+                <p>Image.jpg, Image2.jpg, Image3.jpg</p>
+            </form>
         </div>
-)
-
+    )
 }
+
+
+
+
 //upload file locally and keep track of path (i.e /upload/cocainebear.png)
 //save this path/directory to mongo
 //whenever it's called from frontend, get request(query) /upload/cocainebear.png
