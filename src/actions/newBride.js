@@ -1,4 +1,5 @@
 import { API_BASE_URL } from '../config';
+import { loadAuthToken } from '../local-storage';
 
 export const CREATE_NEW_BRIDE = 'CREATE_NEW_BRIDE'
 export const createNewBride = (bride) => ({
@@ -22,12 +23,15 @@ export const createNewBrideError = (error) => dispatch => ({
 
 
 export const newBride = user => dispatch => {
-    return fetch(`${API_BASE_URL}/users`, {
+    const authToken = loadAuthToken();
+    return fetch(`${API_BASE_URL}/brides`, {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Authorization' : `Bearer ${authToken}`
         },
         body: JSON.stringify(user)
+    
     })
         .then(res => {
             console.log(res);

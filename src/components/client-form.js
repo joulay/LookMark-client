@@ -2,13 +2,17 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Field, reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
+import { newBride } from '../actions/newBride';
 
 class NewClientForm extends React.Component {
     onSubmit(values) {
+
         const {firstName, lastName, email, phone, weddingDate, location} = values;
         const client = {firstName, lastName, email, phone, weddingDate, location};
         console.log(client);
         return this.props
+          .dispatch(newBride(client))
+
     }
     render() {
     return (
@@ -64,15 +68,13 @@ class NewClientForm extends React.Component {
     }  
 }
 
-NewClientForm = reduxForm ({
+export default reduxForm ({
     form: 'client',
-    enableReinitialize: true 
-})
+    // enableReinitialize: true 
+})(NewClientForm);
 
-NewClientForm = connect(
-    state => ({
-        initialValues: state.recipe.initialValues
-    })
-)(NewClientForm)
-
-export default NewClientForm
+// NewClientForm = connect(
+//     state => ({
+//         initialValues: state.recipe.initialValues
+//     })
+// )(NewClientForm)

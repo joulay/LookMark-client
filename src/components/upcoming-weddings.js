@@ -1,8 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function UpcomingWeddings() {
     return (
     <div>
+        <Link to="/newclient">+</Link>
     <h2>Upcoming Weddings</h2>
     <table>
        <tbody>
@@ -28,6 +30,8 @@ export default function UpcomingWeddings() {
             </tr>
         </tbody>
     </table>
+
+    
     </div>
     )
 

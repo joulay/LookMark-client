@@ -2,15 +2,14 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link, Redirect } from 'react-router-dom';
 
-import ClientForm from './client-form';
+import NewClientForm from './client-form';
 
 
 function Client(props) {
     return (
         <div className="client">
-            <ClientForm />
-            <p></p>
-            <Link to="/edit">Edit</Link>
+            <NewClientForm />
+            
                       
         </div>
     )
@@ -20,4 +19,4 @@ function Client(props) {
 //     loggedIn: state.auth.currentUser !== null
 // })  
 
-export default connect()(SignIn);
+export default connect()(Client);

@@ -1,7 +1,7 @@
 import React from 'react';
 import Photos from './photo-upload';
 import Notes from './notes';
-import NewClientForm from './client-form';
+// import NewClientForm from './client-form';
 
 export default function Edit() {
 
@@ -9,7 +9,7 @@ export default function Edit() {
         <div>
             <Photos />
             <Notes />
-            <NewClientForm />
+            {/* <NewClientForm /> */}
         </div>
     )
 }
