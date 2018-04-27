@@ -1,22 +1,22 @@
 import { API_BASE_URL } from '../config';
-import { loadAuthToken } from '../local-storage';
+import { loadAuthToken, getBrideId } from '../local-storage';
 
-export const CREATE_NEW_BRIDE = 'CREATE_NEW_BRIDE'
-export const createNewBride = (bride) => ({
-    type:'CREATE_NEW_BRIDE',
+export const CREATE_BRIDE = 'CREATE_BRIDE'
+export const createBride = (bride) => ({
+    type:'CREATE_BRIDE',
     newBride: bride
 })
 
-export const CREATE_NEW_BRIDE_SUCCESS = 'CREATE_NEW_BRIDE_SUCCESS'
-export const createNewBrideSuccess = () => ({
-    type:'CREATE_NEW_USER_BRIDE',
- 
+export const CREATE_BRIDE_SUCCESS = 'CREATE_BRIDE_SUCCESS'
+export const createBrideSuccess = (bride) => ({
+    type:'CREATE_USER_BRIDE',
+    
 })
 
 
-export const CREATE_NEW_BRIDE_ERROR= 'CREATE_NEW_BRIDE_ERROR'
-export const createNewBrideError = (error) => dispatch => ({
-    type:'CREATE_NEW_BRIDE_ERROR',
+export const CREATE_BRIDE_ERROR= 'CREATE_BRIDE_ERROR'
+export const createBrideError = (error) => dispatch => ({
+    type:'CREATE_BRIDE_ERROR',
     error
 
 })
@@ -36,12 +36,16 @@ export const newBride = user => dispatch => {
         .then(res => {
             console.log(res);
             return res.json()})
-        .then(()=> {
-            return dispatch(createNewBrideSuccess())
-            
+        .then((response)=> {
+            //bride id into local storage so bride id can be used to get detail
+            const id = response.id;
+            console.log(id);
+            // window.location= '/clientdetail'  < redirect to path
+            // window.location = '/clientdetail';
+            return dispatch(createBrideSuccess());
         })
         .catch(err => {
-            dispatch(createNewBrideError(err))
+            dispatch(createBrideError(err))
         });
 };
 

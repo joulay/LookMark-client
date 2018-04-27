@@ -12,7 +12,6 @@ import Notes from './notes';
 import { connect } from 'react-redux';
 
 function Home(props) {
-    // props.dispatch(fetchUsers());
     return (
       <Router>
         <div className="Home">
@@ -37,7 +36,7 @@ function Home(props) {
   
 }
 
-//change to client, not newclient
+//POLISH UP change to client, not newclient
 
 export default connect()(Home);
 

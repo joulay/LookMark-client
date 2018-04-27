@@ -2,8 +2,18 @@ import React from 'react';
 import Notes from './notes';
 
 
-export default function ClientDetail() {
-return (
+export default class ClientDetail extends React.Component {
+    componentDidMount() {
+
+    }
+    
+    //get id of bride from local storage
+    //dispatch action with that id showBride(rename to bride)
+      //fetch to GET id
+      //server will send back bride into redux state
+      //connect to redux, mapState to props get bride from state
+    render() {
+    return ( 
     <div>
         <button
             type="submit">
@@ -19,9 +29,12 @@ return (
         <p> WEDDING DATE </p>
         {/* <Edit />
         <Image />  */}
-    </div>
-    )
-}
 
+        <p> props.firstName </p>
+
+    </div>
+        )       
+    }
+}
 
 //button routes to edit

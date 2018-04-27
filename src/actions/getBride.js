@@ -27,7 +27,7 @@ export const setInitialValues=(id, firstName) => ({
 
 export const showBride =(id)=>(dispatch, getState)=>{
     dispatch(brideRequest());
-    const authToken = getState().auth.authToken;
+    const authToken = localStorage.getItem('authToken');
     console.log(authToken);
     fetch(`${API_BASE_URL}/brides/${id}`, {
         headers: {

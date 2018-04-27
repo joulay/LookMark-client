@@ -11,12 +11,14 @@ class NewClientForm extends React.Component {
         const {firstName, lastName, email, phone, weddingDate, location} = values;
         const client = {firstName, lastName, email, phone, weddingDate, location};
         console.log(client);
+        // const id = 
         return this.props
           .dispatch(newBride(client))
         //   .then(()=> this.props.dispatch(this.props.accessToken))
 
-
-          .then(() => this.props.dispatch(showBride()))
+          // 2 redirect user to new pae
+          // 3 get bride on new page from state with connect redux to component i'm showing on tha tpage
+         
     }
     render() {
     return (
@@ -73,7 +75,15 @@ class NewClientForm extends React.Component {
 }
 
 
+const mapStateToProps = (state, props) => ({
+        value: state.id
+});
 
+NewClientForm = connect(
+    // state => ({
+    //     initialValues: state.props.initialValues
+    // })
+)(NewClientForm)
 
 export default reduxForm ({
     form: 'client',
@@ -82,8 +92,3 @@ export default reduxForm ({
 
 
 
-NewClientForm = connect(
-    state => ({
-        initialValues: state.recipe.initialValues
-    })
-)(NewClientForm)
