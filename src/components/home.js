@@ -24,7 +24,7 @@ function Home(props) {
               <Route exact path="/register" component={RegistrationForm} />
               <Route exact path="/home" component={UpcomingWeddings} />
               <Route exact path="/newclient" component={Client} />
-              <Route exact path="/clientdetail" component={ClientDetail} />
+              <Route exact path="/brides/:id" component={ClientDetail} />
               <Route exact path="/edit" component={Edit} />
               <Route exact path="/photos" component={Photos} />
               <Route exact path="/notes" component={Notes} />

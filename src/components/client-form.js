@@ -2,8 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Field, reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
-import { newBride } from '../actions/newBride';
-import { showBride } from '../actions/getBride';
+import { newBride, getBride } from '../actions/bride';
 
 class NewClientForm extends React.Component {
     onSubmit(values) {
@@ -14,7 +13,7 @@ class NewClientForm extends React.Component {
         // const id = 
         return this.props
           .dispatch(newBride(client))
-        //   .then(()=> this.props.dispatch(this.props.accessToken))
+    
 
           // 2 redirect user to new pae
           // 3 get bride on new page from state with connect redux to component i'm showing on tha tpage

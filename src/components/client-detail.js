@@ -1,11 +1,13 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import Notes from './notes';
-import newBride from '../actions/newBride';
+import { getBride } from '../actions/bride';
 
 
-export default class ClientDetail extends React.Component {
+class ClientDetail extends React.Component {
     componentDidMount() {
-        // dispatch(newBride(id))
+        this.props.dispatch(getBride(this.props.match.params.id));
+        // dispatch(bride(id))
     //get id of bride from local storage
     }
     
@@ -15,7 +17,11 @@ export default class ClientDetail extends React.Component {
       //server will send back bride into redux state
       //connect to redux, mapState to props get bride from state
     render() {
-
+        let name, date;
+        if(this.props.bride) {
+            name = this.props.bride.firstName;
+            date = this.props.bride.weddingDate;
+    }
     return ( 
     <div>
         <button
@@ -23,17 +29,11 @@ export default class ClientDetail extends React.Component {
             EDIT
         </button>
 
-        <p> Image.jpg </p>
+
+        <p> {name} </p>
+        <p> {date} </p>
         <Notes />
 
-        <p> FIRST NAME LAST NAME </p>
-        <p> EMAIL </p>
-        <p> PHONE NUMBER </p>
-        <p> WEDDING DATE </p>
-        {/* <Edit />
-        <Image />  */}
-
-        <p> props.firstName </p>
 
     </div>
         )       
@@ -42,7 +42,9 @@ export default class ClientDetail extends React.Component {
 
 //button routes to edit
 
-// const mapStateToProps = (state, props) => ({
-//     bride: state.id
-// });
+const mapStateToProps = (state, props) => ({
+    bride: state.bride.currentBride
+});
 
+
+export default connect(mapStateToProps)(ClientDetail);
