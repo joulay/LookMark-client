@@ -44,3 +44,4 @@ export const newBride = user => dispatch => {
             dispatch(createNewBrideError(err))
         });
 };
+

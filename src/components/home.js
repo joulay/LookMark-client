@@ -37,6 +37,7 @@ function Home(props) {
   
 }
 
+//change to client, not newclient
 
 export default connect()(Home);
 
