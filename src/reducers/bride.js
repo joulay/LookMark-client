@@ -1,53 +1,47 @@
-import {
-// CREATE_NEW_BRIDE, 
-CREATE_NEW_BRIDE_SUCCESS,
-// CREATE_NEW_BRIDE_ERROR 
-} from '../actions/newBride';
 import{
-// GET_BRIDE_REQUEST,
-// GET_BRIDE_SUCCESS,
-// GET_BRIDE_ERROR, 
-SET_INITIAL_VALUES
-} from '../actions/getBride';
+GET_BRIDE_REQUEST,
+GET_BRIDE_SUCCESS,
+GET_BRIDE_ERROR
+} from '../actions/newBride';
 
 
 const initialState = {
-    newBride: '',
-    initialValues: {
-        _id:'',
-        firstName: '',
-        lastName: '',
-        phone:'',
-        email:'',
-        weddingDate:'',
-        location:'',
-    }
+    brides: [],
+    loading: false,
+    error: false,
 }
 
 export const brideReducer = (state = initialState, action) => {
     if(action.type === 'CREATE_NEW_BRIDE_SUCCESS') {
         return Object.assign({}, state, {
-            newBride: action.newBride
+            
+            brides: [...state.brides, action.bride]
         })
     }
-    else if(action.type === 'SET_INITIAL_VALUES'){
-        const matchedBride = state.bride.find(obj=>obj._id===action.id)
+    else if(action.type === 'GET_BRIDE_REQUEST') {
+        return Object.assign({}, state, {
+            loading: true
+        })
+    }
+    else if(action.type === 'GET_BRIDE_SUCCESS'){
 
         return Object.assign({}, state,{
-          initialValues: {
-              _id: matchedBride._id,
-              firstName: matchedBride.firstName,
-              lastName: matchedBride.lastName,
-              phone: matchedBride.phone,
-              email: matchedBride.email,
-              weddingDate: matchedBride.weddingDate,
-              location: matchedBride.location
-          }
+            brides: action.bride,
+            loading: false
        }) 
     }   
+    else if(action.type === 'GET_BRIDE_ERROR'){
+
+        return Object.assign({}, state,{
+            loading: false,
+            error: true
+        })
+    }    
     return state
 
 }
 
 
 
+
+//asyn action should go to bride endpoint na dbring all bride 

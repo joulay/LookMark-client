@@ -1,18 +1,21 @@
 import React from 'react';
 import Notes from './notes';
+import newBride from '../actions/newBride';
 
 
 export default class ClientDetail extends React.Component {
     componentDidMount() {
-
+        // dispatch(newBride(id))
+    //get id of bride from local storage
     }
     
-    //get id of bride from local storage
-    //dispatch action with that id showBride(rename to bride)
+  
+    //dispatch action with that id showBride
       //fetch to GET id
       //server will send back bride into redux state
       //connect to redux, mapState to props get bride from state
     render() {
+
     return ( 
     <div>
         <button
@@ -38,3 +41,8 @@ export default class ClientDetail extends React.Component {
 }
 
 //button routes to edit
+
+// const mapStateToProps = (state, props) => ({
+//     bride: state.id
+// });
+
