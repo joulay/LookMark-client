@@ -29,6 +29,7 @@ class ClientDetail extends React.Component {
 
         <p> {date} </p>
         <p> {firstName} {lastName} </p>
+        <p> {phone} </p>
         <p> {addy} </p>
         <Notes />
 
