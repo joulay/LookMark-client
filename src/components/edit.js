@@ -3,8 +3,12 @@ import Photos from './photo-upload';
 import Notes from './notes';
 // import NewClientForm from './client-form';
 
-export default function Edit() {
+export default class Edit {
+    initialState = {
 
+    }
+
+    render () {
     return (
         <div>
             <Photos />
@@ -13,7 +17,7 @@ export default function Edit() {
         </div>
     )
 }
-
+}
 //submit put request endpoint reflecting the route 
 
 //look up that specific bride from db

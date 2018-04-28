@@ -2,22 +2,16 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Field, reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
-import { newBride, getBride } from '../actions/bride';
+import { newBride } from '../actions/bride';
 
 class NewClientForm extends React.Component {
     onSubmit(values) {
-
         const {firstName, lastName, email, phone, weddingDate, location} = values;
         const client = {firstName, lastName, email, phone, weddingDate, location};
         console.log(client);
         // const id = 
         return this.props
           .dispatch(newBride(client))
-    
-
-          // 2 redirect user to new pae
-          // 3 get bride on new page from state with connect redux to component i'm showing on tha tpage
-         
     }
     render() {
     return (
@@ -74,9 +68,9 @@ class NewClientForm extends React.Component {
 }
 
 
-const mapStateToProps = (state, props) => ({
-        value: state.id
-});
+// const mapStateToProps = (state, props) => ({
+//         value: state.id
+// });
 
 NewClientForm = connect(
     // state => ({

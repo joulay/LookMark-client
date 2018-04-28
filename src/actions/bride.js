@@ -1,6 +1,5 @@
 import { API_BASE_URL } from '../config';
-import { loadAuthToken, getBrideId } from '../local-storage';
-
+import { loadAuthToken } from '../local-storage';
 
 
 export const CREATE_BRIDE_REQUEST = 'CREATE_BRIDE_REQUEST'
@@ -75,14 +74,11 @@ export const newBride = user => dispatch => {
         body: JSON.stringify(user)
     
     })
-        .then(res => {
-            return res.json()})
-            .then((response)=> {
-            console.log(response);
+        .then(res => res.json())
+            .then(response=> {
+            // (response)
             const id = response.id;
-            console.log(id);
-            //bride id into local storage so bride id can be used to get detail
-            // window.location = '/clientdetail';
+            window.location = `/brides/${id}`;
             return dispatch(createBrideRequest(response));
         })
         .catch(err => {

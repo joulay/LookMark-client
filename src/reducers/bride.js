@@ -70,5 +70,3 @@ export const brideReducer = (state = initialState, action) => {
 
 
 
-
-//asyn action should go to bride endpoint na dbring all bride 

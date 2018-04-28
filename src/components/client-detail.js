@@ -7,20 +7,17 @@ import { getBride } from '../actions/bride';
 class ClientDetail extends React.Component {
     componentDidMount() {
         this.props.dispatch(getBride(this.props.match.params.id));
-        // dispatch(bride(id))
-    //get id of bride from local storage
     }
     
-  
-    //dispatch action with that id showBride
-      //fetch to GET id
-      //server will send back bride into redux state
-      //connect to redux, mapState to props get bride from state
     render() {
-        let name, date;
+        let firstName, lastName, date, phone, addy;
         if(this.props.bride) {
-            name = this.props.bride.firstName;
+            firstName = this.props.bride.firstName;
+            lastName = this.props.bride.lastName;
             date = this.props.bride.weddingDate;
+            phone = this.props.bride.phone;
+            addy = this.props.bride.location;
+
     }
     return ( 
     <div>
@@ -30,8 +27,9 @@ class ClientDetail extends React.Component {
         </button>
 
 
-        <p> {name} </p>
         <p> {date} </p>
+        <p> {firstName} {lastName} </p>
+        <p> {addy} </p>
         <Notes />
 
 
