@@ -16,12 +16,12 @@ class UpcomingWeddings extends React.Component {
                 <td>{bride.weddingDate}</td>
                 <td>{bride.firstName} {bride.lastName}</td>
                 <td>{bride.location}</td>
-                <td><Link to={`/brides/${bride.id}`}>Bride</Link></td>
+                <td><Link to={`/brides/${bride.id}`}>DETAIL</Link></td>
             </tr>
         ))
     return (
     <div>
-        <Link to="/newclient">+</Link>
+        <Link to="/newclient">+ NEW CLIENT</Link>
     <h2>Upcoming Weddings</h2>
     <table>
        <tbody>

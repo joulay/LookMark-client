@@ -76,7 +76,6 @@ export const newBride = user => dispatch => {
     })
         .then(res => res.json())
             .then(response=> {
-            // (response)
             const id = response.id;
             window.location = `/brides/${id}`;
             return dispatch(createBrideRequest(response));
@@ -91,7 +90,6 @@ export const newBride = user => dispatch => {
 export const getBride =(id)=>(dispatch, getState)=>{
     dispatch(getBrideRequest());
     const authToken = localStorage.getItem('authToken');
-    console.log(authToken);
     fetch(`${API_BASE_URL}/brides/${id}`, {
         headers: {
             'Authorization': `Bearer ${authToken}`,
@@ -99,20 +97,14 @@ export const getBride =(id)=>(dispatch, getState)=>{
         }
     })
         .then(res => res.json())
-        .then(bride=> {
-            console.log(bride);
-            dispatch(getBrideSuccess(bride))})
-        .catch(err=> {
-            console.log(err);
-            dispatch(getBrideError(err))
-        })
+        .then(bride=> dispatch(getBrideSuccess(bride)))
+        .catch(err=> dispatch(getBrideError(err)))
     
 }
 
 export const getBrides =() => (dispatch, getState) => {
     dispatch(getBridesRequest());
     const authToken = localStorage.getItem('authToken');
-    // console.log(authToken);
     fetch(`${API_BASE_URL}/brides`, {
         headers: {
             'Authorization': `Bearer ${authToken}`,

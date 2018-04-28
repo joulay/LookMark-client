@@ -18,7 +18,6 @@ class RegistrationForm extends React.Component{
     onSubmit(values) {    
         const {fullName, email, username, password} = values;
         const user = {fullName, email, username, password};
-        console.log(user);
         return this.props
             .dispatch(newUser(user))
             .then(this.setState({msg: 'Thank you for registering. Please log in'})
@@ -39,7 +38,7 @@ class RegistrationForm extends React.Component{
                 /> <br />
                 <label htmlFor="email">EMAIL</label> <br />
                 <Field component={Input}
-                    type="text" 
+                    type="email" 
                     name="email" 
                 /> <br />
                 <label htmlFor="username">USERNAME</label> <br />
