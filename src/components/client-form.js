@@ -36,13 +36,13 @@ class NewClientForm extends React.Component {
                 <label htmlFor="email">EMAIL</label> <br />
                 <Field 
                     component="input" 
-                    type="text" 
+                    type="email" 
                     name="email" 
                 /> <br />
                 <label htmlFor="phone">PHONE</label> <br />
                 <Field 
                     component="input" 
-                    type="text" 
+                    type="number" 
                     name="phone" 
                 /> <br />
                 <label htmlFor="location">LOCATION</label> <br />
