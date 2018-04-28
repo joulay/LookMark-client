@@ -60,8 +60,23 @@ export const getBridesError = (error) => dispatch => ({
     error
 })
 
-// another asyn action to get from brides to hit get brides endpoint
+export const UPDATE_BRIDE_REQUEST = 'UPDATE_BRIDE_REQUEST'
+export const updateBrideRequest = (bride) => ({
+    type:'UPDATE_BRIDE_REQUEST',
+    newBride: bride
+})
 
+export const UPDATE_BRIDE_SUCCESS = 'UPDATE_BRIDE_SUCCESS'
+export const updateBrideSuccess = (bride) => ({
+    type:'UPDATE_BRIDE_SUCCESS',
+    newBride: bride
+})
+
+export const UPDATE_BRIDE_ERROR = 'UPDATE_BRIDE_ERROR'
+export const updateBrideError = (error) => ({
+    type:'UPDATE_BRIDE_ERROR',
+    error
+})
 
 export const newBride = user => dispatch => {
     const authToken = loadAuthToken();
@@ -77,7 +92,7 @@ export const newBride = user => dispatch => {
         .then(res => res.json())
             .then(response=> {
             const id = response.id;
-            window.location = `/brides/${id}`;
+            // window.location = `/brides/${id}`;
             return dispatch(createBrideRequest(response));
         })
         .catch(err => {
@@ -121,3 +136,26 @@ export const getBrides =() => (dispatch, getState) => {
         })
     
 }
+
+
+export const updateBride = user => dispatch => {
+    console.log(user);
+    const authToken = loadAuthToken();
+    return fetch(`${API_BASE_URL}/brides/${user.id}`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization' : `Bearer ${authToken}`
+        },
+        body: JSON.stringify(user)
+    
+    })
+        .then(res => res.json())
+            .then(response=> {
+            const id = response.id;
+            return dispatch(updateBrideRequest(response));
+        })
+        .catch(err => {
+            dispatch(updateBrideError(err))
+        });
+};

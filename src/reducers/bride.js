@@ -8,6 +8,9 @@ GET_BRIDE_ERROR,
 GET_BRIDES_REQUEST,
 GET_BRIDES_SUCCESS,
 GET_BRIDES_ERROR,
+UPDATE_BRIDE_REQUEST,
+UPDATE_BRIDE_SUCCESS,
+UPDATE_BRIDE_ERROR
 } from '../actions/bride';
 
 
@@ -64,6 +67,23 @@ export const brideReducer = (state = initialState, action) => {
        }) 
     }   
     else if(action.type === GET_BRIDES_ERROR){
+        return Object.assign({}, state,{
+            loading: false,
+            error: action.error
+        })
+    }   
+    else if(action.type === UPDATE_BRIDE_REQUEST) {
+        return Object.assign({}, state, {
+            loading: true
+        })
+    }
+    else if(action.type === UPDATE_BRIDE_SUCCESS){
+        return Object.assign({}, state,{
+            brides: action.brides,
+            loading: false
+       }) 
+    }   
+    else if(action.type === UPDATE_BRIDE_ERROR){
         return Object.assign({}, state,{
             loading: false,
             error: action.error
