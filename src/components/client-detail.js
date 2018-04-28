@@ -5,17 +5,13 @@ import { getBride } from '../actions/bride';
 import Edit from './edit';
 import { Link } from 'react-router-dom';
 
-
 class ClientDetail extends React.Component {
-
     componentDidMount() {
         this.props.dispatch(getBride(this.props.match.params.id));
         console.log(this.props.bride);
     
     }
 
-
-    
     render() {
         let firstName, lastName, date, phone, addy, email;
         if(this.props.bride) {
@@ -25,11 +21,9 @@ class ClientDetail extends React.Component {
             phone = this.props.bride.phone;
             addy = this.props.bride.location;
             email = this.props.bride.email;
-
     }
 
-    return ( 
-        
+    return (  
     <div>
 
        <Link to={`/edit/${this.props.match.params.id}`}>Edit</Link>

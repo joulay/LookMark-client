@@ -5,8 +5,6 @@ import { Field, reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
 import { getBride, updateBride } from '../actions/bride';
 
-// import NewClientForm from './client-form';
-
 class Edit extends React.Component {
     constructor(props) {
         super(props)
@@ -21,9 +19,7 @@ class Edit extends React.Component {
         }
     }
 
-
     componentDidMount() {
- 
         this.props.dispatch(getBride(this.props.match.params.id));
         setTimeout(() => {(
             this.props.bride);
@@ -36,8 +32,7 @@ class Edit extends React.Component {
                 email: this.props.bride.email,   
                 id: this.props.bride.id
             }); 
-        }, 500); //because of synchronous, w/o wil be undefined
-
+        }, 500); //without will be undefined
     }
 
     onSubmit = () => { 
@@ -48,82 +43,67 @@ class Edit extends React.Component {
             .dispatch(updateBride(client))
     }
 
-    firstNameChange=(e => 
-        {this.setState({firstName: e.target.value});
-    });
-    lastNameChange=e=>{this.setState({lastName: e.target.value});
-    };
-    emailChange=e=>{this.setState({email: e.target.value});
-    };
-    phoneChange=e=>{this.setState({phone: e.target.value});
-    };
-    weddingDateChange=e=>{this.setState({weddingDate: e.target.value});
-    };
-    locationChange=e=>{this.setState({location: e.target.value});
-    };
-    render() {
-       
-    
+    firstNameChange=(e => {
+        this.setState({firstName: e.target.value})});
+    lastNameChange=(e => {
+        this.setState({lastName: e.target.value})});
+    emailChange=(e => {
+        this.setState({email: e.target.value})});
+    phoneChange=(e => {
+        this.setState({phone: e.target.value})});
+    weddingDateChange=(e => {
+        this.setState({weddingDate: e.target.value})});
+    locationChange=(e => {
+        this.setState({location: e.target.value})});
+
+    render() { 
 
     return (
-   
         <form
             className="client-form">
-        <label htmlFor="firstName">FIRST NAME</label> <br />
-        <input onChange={this.firstNameChange}
-            value={this.state.firstName}
-            type="text" 
-            name="firstName" 
-        /> <br />
-        <label htmlFor="lastName">LAST NAME</label> <br />
-        <input onChange={this.lastNameChange}
-            value={this.state.lastName}
-            type="text" 
-            name="lastName" 
-        /> <br />
-        <label htmlFor="email">EMAIL</label> <br />
-        <input onChange={this.emailChange}
-            value={this.state.email}
-            type="text" 
-            name="email" 
-        /> <br />
-        <label htmlFor="phone">PHONE</label> <br />
-        <input onChange={this.phoneChange}
-            value={this.state.phone}
-            type="text" 
-            name="phone" 
-        /> <br />
-        <label htmlFor="location">LOCATION</label> <br />
-        <input onChange={this.locationChange}
-            value={this.state.location}
-            type="text" 
-            name="location" 
-        /> <br />
-        <label htmlFor="weddingDate">WEDDING DATE</label> <br />
-        <input onChange={this.dateChange}
-            value={this.state.weddingDate}
-            type="date" 
-            name="weddingDate" 
-        /> <br />
+            <label htmlFor="firstName">FIRST NAME</label> <br />
+            <input onChange={this.firstNameChange}
+                value={this.state.firstName}
+                type="text" 
+                name="firstName" 
+            /> <br />
+            <label htmlFor="lastName">LAST NAME</label> <br />
+            <input onChange={this.lastNameChange}
+                value={this.state.lastName}
+                type="text" 
+                name="lastName" 
+            /> <br />
+            <label htmlFor="email">EMAIL</label> <br />
+            <input onChange={this.emailChange}
+                value={this.state.email}
+                type="text" 
+                name="email" 
+            /> <br />
+            <label htmlFor="phone">PHONE</label> <br />
+            <input onChange={this.phoneChange}
+                value={this.state.phone}
+                type="text" 
+                name="phone" 
+            /> <br />
+            <label htmlFor="location">LOCATION</label> <br />
+            <input onChange={this.locationChange}
+                value={this.state.location}
+                type="text" 
+                name="location" 
+            /> <br />
+            <label htmlFor="weddingDate">WEDDING DATE</label> <br />
+            <input onChange={this.dateChange}
+                value={this.state.weddingDate}
+                type="date" 
+                name="weddingDate" 
+            /> <br />
 
-        <div className='button' onClick={this.onSubmit}
-            >
-            UPDATE CLIENT
-        </div>
+            <div className='button' onClick={this.onSubmit}>
+                UPDATE CLIENT
+            </div>
         </form>
    
-    )
-
-    
-    // return (
-    //     <div>
-    //         {/* <Photos />
-    //         <Notes /> */}
-    //         <button onClick={e => this.showEdit(e)}>Edit</button>
-    //         {/* <NewClientForm /> */}
-    //     </div>
-    // )
-}
+    )}
 }
 //submit put request endpoint reflecting the route 
 

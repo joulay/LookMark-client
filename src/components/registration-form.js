@@ -22,11 +22,13 @@ class RegistrationForm extends React.Component{
             .dispatch(newUser(user))
             .then(this.setState({msg: 'Thank you for registering. Please log in'})
             )}
+
     render() {
+        
     return (
         <div>
             <Link to="/signup">Back</Link>
-            {this.state.msg ? this.state.msg : ''}
+            <p>{this.state.msg ? this.state.msg : ''}</p>
             <form 
                 className="registration-form" 
                 onSubmit={this.props.handleSubmit(values =>
