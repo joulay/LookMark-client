@@ -106,6 +106,7 @@ class Edit extends React.Component {
                 </div>
             </form>
             <Notes />
+            <Photos />
         </div>
     )}
 }

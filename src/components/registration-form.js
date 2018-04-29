@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import { Field, reduxForm } from 'redux-form';
 import  { newUser } from '../actions/createUser';
 import Input from './input';
+import { Form, Button } from 'antd';
+const FormItem = Form.Item;
 // import { login } from '../actions/auth';
 
 class RegistrationForm extends React.Component{
@@ -24,7 +26,29 @@ class RegistrationForm extends React.Component{
             )}
 
     render() {
-        
+        const { getFieldDecorator } = this.props.form;   
+        const formItemLayout = {
+            labelCol: {
+              xs: { span: 24 },
+              sm: { span: 8 },
+            },
+            wrapperCol: {
+              xs: { span: 24 },
+              sm: { span: 16 },
+            },
+          };
+          const tailFormItemLayout = {
+            wrapperCol: {
+              xs: {
+                span: 24,
+                offset: 0,
+              },
+              sm: {
+                span: 16,
+                offset: 8,
+              },
+            },
+          };     
     return (
         <div>
             <Link to="/signup">Back</Link>
@@ -33,11 +57,25 @@ class RegistrationForm extends React.Component{
                 className="registration-form" 
                 onSubmit={this.props.handleSubmit(values =>
                     this.onSubmit(values)) }> 
-                <label htmlFor="fullName">FULL NAME</label> <br />
+
+                 <FormItem
+                    {...formItemLayout}
+                    label="FULL NAME"
+                >    
+                {/* <label htmlFor="fullName">FULL NAME</label> <br /> */}
+
+
+
                 <Field component={Input}
                     type="text" 
                     name="fullName" 
                 /> <br />
+
+
+                </FormItem>       
+
+
+
                 <label htmlFor="email">EMAIL</label> <br />
                 <Field component={Input}
                     type="email" 
@@ -57,6 +95,9 @@ class RegistrationForm extends React.Component{
                     type="submit">
                     CREATE AN ACCOUNT 
                 </button>
+
+                <br />
+                <Button type="primary" htmlType="submit">REGISTER</Button>
             </form>
             
         </div>

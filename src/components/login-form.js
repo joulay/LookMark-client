@@ -2,12 +2,14 @@ import React from 'react';
 import { Field, reduxForm, focus } from 'redux-form';
 import Input from './input';
 import { login } from '../actions/auth';
-
+import { Form, Icon, Button } from 'antd';
+const FormItem = Form.Item;
 
 export class LoginForm extends React.Component {
     onSubmit(values) {
         return this.props.dispatch(login(values.username, values.password));
     }
+
     render() {
         let error;
         if (this.props.error) {
@@ -17,33 +19,50 @@ export class LoginForm extends React.Component {
                 </div>
             );
         }
-        return (
-            <form
+        const { getFieldDecorator } = this.props.form;
+
+        return (    
+            <Form
                 className="login-form"
                 onSubmit={this.props.handleSubmit(values =>
                     this.onSubmit(values)
                 )}>
                 {error}
-                <label htmlFor="username">Username</label>
+
+                <FormItem>
+                    
                 <Field
                     component={Input}
                     type="text"
                     name="username"
                     id="username"
+                    placeholder="USERNAME"
              
                 />
-                <label htmlFor="password">Password</label>
+           
+                </FormItem>
+
+
                 <Field
                     component={Input}
                     type="password"
                     name="password"
                     id="password"
+                    placeholder="PASSWORD"
                
                 />
+
+
                 <button disabled={this.props.pristine || this.props.submitting}>
                     Log in
                 </button>
-            </form>
+
+                <Button type="primary" htmlType="submit" className="login-form-button">
+            LOG IN
+          </Button>
+
+
+            </Form>
         );
     }
 }
