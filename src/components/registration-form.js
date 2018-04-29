@@ -4,9 +4,8 @@ import { Link } from 'react-router-dom';
 import { Field, reduxForm } from 'redux-form';
 import  { newUser } from '../actions/createUser';
 import Input from './input';
-import { Form, Button } from 'antd';
-const FormItem = Form.Item;
-// import { login } from '../actions/auth';
+import './registration-form.css';
+
 
 class RegistrationForm extends React.Component{
     constructor(props) {
@@ -26,78 +25,47 @@ class RegistrationForm extends React.Component{
             )}
 
     render() {
-        const { getFieldDecorator } = this.props.form;   
-        const formItemLayout = {
-            labelCol: {
-              xs: { span: 24 },
-              sm: { span: 8 },
-            },
-            wrapperCol: {
-              xs: { span: 24 },
-              sm: { span: 16 },
-            },
-          };
-          const tailFormItemLayout = {
-            wrapperCol: {
-              xs: {
-                span: 24,
-                offset: 0,
-              },
-              sm: {
-                span: 16,
-                offset: 8,
-              },
-            },
-          };     
+        
     return (
         <div>
             <Link to="/signup">Back</Link>
             <p>{this.state.msg ? this.state.msg : ''}</p>
             <form 
-                className="registration-form" 
+                className="form" 
                 onSubmit={this.props.handleSubmit(values =>
                     this.onSubmit(values)) }> 
-
-                 <FormItem
-                    {...formItemLayout}
-                    label="FULL NAME"
-                >    
-                {/* <label htmlFor="fullName">FULL NAME</label> <br /> */}
-
-
 
                 <Field component={Input}
                     type="text" 
                     name="fullName" 
+                    placeholder="FULL NAME"
                 /> <br />
 
-
-                </FormItem>       
-
-
-
-                <label htmlFor="email">EMAIL</label> <br />
                 <Field component={Input}
                     type="email" 
-                    name="email" 
+                    name="email"  
+                    placeholder="EMAIL"
                 /> <br />
-                <label htmlFor="username">USERNAME</label> <br />
+
                 <Field component={Input}
                     type="text" 
                     name="username" 
+                    placeholder="USERNAME"
                 /> <br />
-                <label htmlFor="password">PASSWORD</label> <br />
+
                 <Field component={Input}
                     type="text" 
                     name="password" 
+                    placeholder="PASSWORD"
                 /> <br />
+
                 <button
                     type="submit">
-                    CREATE AN ACCOUNT 
+                    REGISTER 
                 </button>
 
                 <br />
-                <Button type="primary" htmlType="submit">REGISTER</Button>
+
             </form>
             
         </div>
