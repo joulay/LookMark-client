@@ -27,7 +27,7 @@ class RegistrationForm extends React.Component{
     render() {
         
     return (
-        <div>
+        <div className="register-page">
             <Link to="/signup">Back</Link>
             <p>{this.state.msg ? this.state.msg : ''}</p>
             <form 
