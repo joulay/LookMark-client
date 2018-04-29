@@ -1,5 +1,5 @@
 import React from 'react';
-
+// import  from 'fine-uploader';
 
 export default function Photos() {
 

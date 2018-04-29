@@ -25,22 +25,23 @@ class UpcomingWeddings extends React.Component {
         <button id="newClient">
         <Link to="/newclient">+ NEW CLIENT</Link>
         </button>
-    <h2>Upcoming Weddings</h2>
+    <h1>Upcoming Weddings</h1>
     <table class="upcoming-wedding-table">
-       <tbody>
+        <tbody>
             <tr>
                 <th>Date</th>
                 <th>Bride</th>
                 <th>Venue</th>
             </tr>
-
            {brides}
-
         </tbody>
     </table>
-
-    
     </div>
+
+
+
+
+
     )
   }
 }
