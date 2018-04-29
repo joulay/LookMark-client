@@ -1,9 +1,9 @@
 import React from 'react';
 import Photos from './photo-upload';
-import Notes from './notes';
 import { Field, reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
 import { getBride, updateBride } from '../actions/bride';
+import { Link } from 'react-router-dom';
 import './edit.css';
 
 
@@ -17,7 +17,8 @@ class Edit extends React.Component {
             email: '',
             phone: '',
             weddingDate: '',
-            location:''
+            location:'',
+            notes: ''
         }
     }
 
@@ -32,14 +33,15 @@ class Edit extends React.Component {
                 location: this.props.bride.location,     
                 weddingDate: this.props.bride.weddingDate,     
                 email: this.props.bride.email,   
+                notes: this.props.bride.notes,
                 id: this.props.bride.id
             }); 
         }, 500); //without will be undefined
     }
 
     onSubmit = () => { 
-        const {firstName, lastName, email, phone, weddingDate, location, id} = this.state;
-        const client = {firstName, lastName, email, phone, weddingDate, location, id};
+        const {firstName, lastName, email, phone, weddingDate, location, id, notes} = this.state;
+        const client = {firstName, lastName, email, phone, weddingDate, location, id, notes};
         console.log(client);
         return this.props
             .dispatch(updateBride(client))
@@ -57,11 +59,13 @@ class Edit extends React.Component {
         this.setState({weddingDate: e.target.value})});
     locationChange=(e => {
         this.setState({location: e.target.value})});
-
+    notesChange=(e => {
+        this.setState({notes: e.target.value})});
     render() { 
 
     return (
         <div>
+        <Link to="/home">Back</Link>
             <form
                 className="form">
                 <label htmlFor="firstName">First Name</label> <br />
@@ -106,17 +110,26 @@ class Edit extends React.Component {
                     name="weddingDate" 
                     id="weddingDate"
                 /> <br />
+                <label htmlFor="notes">Notes</label> <br />
+                <input onChange={this.notesChange}
+                    value={this.state.notes}
+                    type="textarea" 
+                    name="notes" 
+                    id="notes"
+                    placeholder="allergies: "
+                /> <br />
 
+          
+             <button>
                 <div id='button' onClick={this.onSubmit}>
                     UPDATE CLIENT
                 </div>
-
-                <button
-                    type="submit">
-                    UPDATE CLIENT
-                </button>
+              </button>
+               
+         
+              
             </form>
-            <Notes />
+            
             <Photos />
         </div>
     )}

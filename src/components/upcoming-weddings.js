@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { getBrides } from '../actions/bride';
+import './upcoming-wedding.css';
 
 
 class UpcomingWeddings extends React.Component {
@@ -20,10 +21,12 @@ class UpcomingWeddings extends React.Component {
             </tr>
         ))
     return (
-    <div>
+    <div className="upcoming-wedding">
+        <button id="newClient">
         <Link to="/newclient">+ NEW CLIENT</Link>
+        </button>
     <h2>Upcoming Weddings</h2>
-    <table>
+    <table class="upcoming-wedding-table">
        <tbody>
             <tr>
                 <th>Date</th>

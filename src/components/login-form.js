@@ -42,7 +42,7 @@ export class LoginForm extends React.Component {
                         name="password"
                         id="password"
                         placeholder="PASSWORD"
-                    />
+                    /> <br />
 
                     <button disabled={this.props.pristine || this.props.submitting}>
                         LOG IN

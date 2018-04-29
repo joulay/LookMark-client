@@ -5,14 +5,14 @@ export default function Notes() {
 return (
     <form>
         <label>
-        NOTES: <br />
-        <textarea  rows="10" cols="50">
+        Notes: <br />
+        <textarea  rows="10" cols="47">
             ALLERGIES:
          
         </textarea>
         
         </label> <br />
-        <button type="submit">SUBMIT</button>
+        {/* <button type="submit">SUBMIT</button> */}
         
     </form>
     )

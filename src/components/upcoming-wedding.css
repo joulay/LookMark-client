@@ -1,0 +1,33 @@
+button #newClient {
+    line-height: 1.5;
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    padding: 0 15px;
+    font-size: 14px;
+    border-radius: 4px;
+    height: 32px;
+    position: relative;
+    color: rgba(0,0,0,.65);
+    background-color: #fff;
+    border-color: #d9d9d9;
+   
+}
+
+
+div .upcoming-wedding {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    
+    text-align: center;
+}
+
+.upcoming-wedding-table {
+    margin-left: auto;
+    margin-right: auto;
+}

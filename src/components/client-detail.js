@@ -12,7 +12,7 @@ class ClientDetail extends React.Component {
     }
 
     render() {
-        let firstName, lastName, date, phone, addy, email;
+        let firstName, lastName, date, phone, addy, email, notes;
         if(this.props.bride) {
             firstName = this.props.bride.firstName;
             lastName = this.props.bride.lastName;
@@ -20,10 +20,11 @@ class ClientDetail extends React.Component {
             phone = this.props.bride.phone;
             addy = this.props.bride.location;
             email = this.props.bride.email;
+            notes = this.props.bride.notes;
     }
 
     return (  
-    <div>
+    <div className="client-detail">
 
        <Link to={`/home`}>HOME</Link> <br />
        <Link to={`/edit/${this.props.match.params.id}`}>EDIT</Link> 
@@ -33,6 +34,7 @@ class ClientDetail extends React.Component {
         <p> {phone} </p>
         <p> {addy} </p>
         <p> {email} </p>
+        <p> {notes} </p>
        
 
 
