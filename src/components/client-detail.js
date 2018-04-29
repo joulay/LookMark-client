@@ -29,13 +29,22 @@ class ClientDetail extends React.Component {
        <Link to={`/home`}>HOME</Link> <br />
        <Link to={`/edit/${this.props.match.params.id}`}>EDIT</Link> 
 
-        <p> Wedding Date: {date} </p>
-        <h2> {firstName} {lastName} </h2>
-        <p>  {phone} </p>
-        <p> Location: {addy} </p>
-        <p> {email} </p>
-        <p> {notes} </p>
-       
+
+    <div className="card">
+        <div className="content">
+            <div className="deets">
+                <h2>{firstName} {lastName}</h2> 
+                <p className="date">{date}</p> <br/>
+                {phone} <br/>
+                {addy} <br/>
+                {email} <br />
+                {notes} <br />
+            </div>
+        </div>
+    </div>
+
+
+
 
 
     </div>
