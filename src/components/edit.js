@@ -104,7 +104,7 @@ class Edit extends React.Component {
                     id="location"
                 /> <br />
                 <label htmlFor="weddingDate">Wedding Date</label> <br />
-                <input onChange={this.dateChange}
+                <input onChange={this.weddingDateChange}
                     value={this.state.weddingDate}
                     type="date" 
                     name="weddingDate" 
