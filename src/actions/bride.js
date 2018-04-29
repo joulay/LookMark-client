@@ -92,7 +92,7 @@ export const newBride = user => dispatch => {
         .then(res => res.json())
             .then(response=> {
             const id = response.id;
-            // window.location = `/brides/${id}`;
+            window.location = `/brides/${id}`;
             return dispatch(createBrideRequest(response));
         })
         .catch(err => {
@@ -153,6 +153,7 @@ export const updateBride = user => dispatch => {
         .then(res => res.json())
             .then(response=> {
             const id = response.id;
+            window.location = `/brides/${id}`;
             return dispatch(updateBrideRequest(response));
         })
         .catch(err => {

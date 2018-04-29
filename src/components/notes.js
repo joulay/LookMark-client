@@ -9,6 +9,7 @@ return (
             ALLERGIES:
          
         </textarea>
+        
         </label> <br />
         
     </form>

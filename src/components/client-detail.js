@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import Notes from './notes';
 import { getBride } from '../actions/bride';
 import Edit from './edit';
 import { Link } from 'react-router-dom';
@@ -26,15 +25,15 @@ class ClientDetail extends React.Component {
     return (  
     <div>
 
-       <Link to={`/edit/${this.props.match.params.id}`}>Edit</Link>
-
+       <Link to={`/home`}>HOME</Link> <br />
+       <Link to={`/edit/${this.props.match.params.id}`}>EDIT</Link> 
 
         <p> {date} </p>
         <p> {firstName} {lastName} </p>
         <p> {phone} </p>
         <p> {addy} </p>
         <p> {email} </p>
-        <Notes />
+       
 
 
     </div>

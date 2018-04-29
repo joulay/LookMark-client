@@ -4,6 +4,8 @@ import Notes from './notes';
 import { Field, reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
 import { getBride, updateBride } from '../actions/bride';
+import './edit.css';
+
 
 class Edit extends React.Component {
     constructor(props) {
@@ -59,70 +61,54 @@ class Edit extends React.Component {
     render() { 
 
     return (
-        <form
-            className="client-form">
-            <label htmlFor="firstName">FIRST NAME</label> <br />
-            <input onChange={this.firstNameChange}
-                value={this.state.firstName}
-                type="text" 
-                name="firstName" 
-            /> <br />
-            <label htmlFor="lastName">LAST NAME</label> <br />
-            <input onChange={this.lastNameChange}
-                value={this.state.lastName}
-                type="text" 
-                name="lastName" 
-            /> <br />
-            <label htmlFor="email">EMAIL</label> <br />
-            <input onChange={this.emailChange}
-                value={this.state.email}
-                type="text" 
-                name="email" 
-            /> <br />
-            <label htmlFor="phone">PHONE</label> <br />
-            <input onChange={this.phoneChange}
-                value={this.state.phone}
-                type="text" 
-                name="phone" 
-            /> <br />
-            <label htmlFor="location">LOCATION</label> <br />
-            <input onChange={this.locationChange}
-                value={this.state.location}
-                type="text" 
-                name="location" 
-            /> <br />
-            <label htmlFor="weddingDate">WEDDING DATE</label> <br />
-            <input onChange={this.dateChange}
-                value={this.state.weddingDate}
-                type="date" 
-                name="weddingDate" 
-            /> <br />
+        <div>
+            <form
+                className="client-form">
+                <label htmlFor="firstName">FIRST NAME</label> <br />
+                <input onChange={this.firstNameChange}
+                    value={this.state.firstName}
+                    type="text" 
+                    name="firstName" 
+                /> <br />
+                <label htmlFor="lastName">LAST NAME</label> <br />
+                <input onChange={this.lastNameChange}
+                    value={this.state.lastName}
+                    type="text" 
+                    name="lastName" 
+                /> <br />
+                <label htmlFor="email">EMAIL</label> <br />
+                <input onChange={this.emailChange}
+                    value={this.state.email}
+                    type="text" 
+                    name="email" 
+                /> <br />
+                <label htmlFor="phone">PHONE</label> <br />
+                <input onChange={this.phoneChange}
+                    value={this.state.phone}
+                    type="text" 
+                    name="phone" 
+                /> <br />
+                <label htmlFor="location">LOCATION</label> <br />
+                <input onChange={this.locationChange}
+                    value={this.state.location}
+                    type="text" 
+                    name="location" 
+                /> <br />
+                <label htmlFor="weddingDate">WEDDING DATE</label> <br />
+                <input onChange={this.dateChange}
+                    value={this.state.weddingDate}
+                    type="date" 
+                    name="weddingDate" 
+                /> <br />
 
-            <div className='button' onClick={this.onSubmit}>
-                UPDATE CLIENT
-            </div>
-        </form>
-   
+                <div className='button' onClick={this.onSubmit}>
+                    UPDATE CLIENT
+                </div>
+            </form>
+            <Notes />
+        </div>
     )}
 }
-//submit put request endpoint reflecting the route 
-
-//look up that specific bride from db
-//go through each field 
-//query through each 
-
-
-// this.state.coin = object of all coin
-// value = this.state.coin.name
-// tagline = this.state.coin.tagline
-// summary = this.state.coin.summary
-// so all value is populated 
-
-// create bride, save to db, when you want to edit, copy past of component
-// query it  get with /client/name
-// save it to state 
-// put in values for inputs in form
-// when you submit, separate put request
 
 
 const mapStateToProps = (state, props) => ({
