@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { Field, reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
 import { newBride } from '../actions/bride';
+import Input from './input';
+import './client.css';
 
 class NewClientForm extends React.Component {
     onSubmit(values) {
@@ -18,42 +20,46 @@ class NewClientForm extends React.Component {
         <div>
             <Link to="/home">Back</Link>
             <form 
-                className="client-form"
+                className="form"
                 onSubmit={this.props.handleSubmit(values => 
                     this.onSubmit(values)) }> 
-                <label htmlFor="firstName">FIRST NAME</label> <br />
                 <Field 
-                    component="input" 
+                    component={Input} 
                     type="text" 
                     name="firstName" 
+                    placeholder="FIRST NAME"
                 /> <br />
-                <label htmlFor="lastName">LAST NAME</label> <br />
+ 
                 <Field 
-                    component="input" 
+                    component={Input} 
                     type="text" 
                     name="lastName" 
+                    placeholder="LAST NAME"
                 /> <br />
-                <label htmlFor="email">EMAIL</label> <br />
+  
                 <Field 
-                    component="input" 
+                    component={Input} 
                     type="email" 
                     name="email" 
+                    placeholder="EMAIL"
                 /> <br />
-                <label htmlFor="phone">PHONE</label> <br />
+          
                 <Field 
-                    component="input" 
+                    component={Input} 
                     type="number" 
                     name="phone" 
+                    placeholder="PHONE"
                 /> <br />
-                <label htmlFor="location">LOCATION</label> <br />
+    
                 <Field 
-                    component="input" 
+                    component={Input} 
                     type="text" 
                     name="location" 
+                    placeholder="LOCATION"
                 /> <br />
                 <label htmlFor="weddingDate">WEDDING DATE</label> <br />
                 <Field 
-                    component="input" 
+                    component={Input} 
                     type="date" 
                     name="weddingDate" 
                 /> <br />

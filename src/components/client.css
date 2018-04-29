@@ -1,0 +1,11 @@
+.form {
+    max-width: 300px;
+  }
+  
+  #firstName, #lastName, #phone, #location, #weddingDate {
+    width: 100%;
+    height: 32px;
+    padding: 4px 11px;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+  }

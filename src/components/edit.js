@@ -63,47 +63,58 @@ class Edit extends React.Component {
     return (
         <div>
             <form
-                className="client-form">
-                <label htmlFor="firstName">FIRST NAME</label> <br />
+                className="form">
+                <label htmlFor="firstName">First Name</label> <br />
                 <input onChange={this.firstNameChange}
                     value={this.state.firstName}
                     type="text" 
                     name="firstName" 
+                    id="firstName"
                 /> <br />
-                <label htmlFor="lastName">LAST NAME</label> <br />
+                <label htmlFor="lastName">Last Name</label> <br />
                 <input onChange={this.lastNameChange}
                     value={this.state.lastName}
                     type="text" 
                     name="lastName" 
+                    id="lastName"
                 /> <br />
-                <label htmlFor="email">EMAIL</label> <br />
+                <label htmlFor="email">Email</label> <br />
                 <input onChange={this.emailChange}
                     value={this.state.email}
                     type="text" 
                     name="email" 
+                    id="email"
                 /> <br />
-                <label htmlFor="phone">PHONE</label> <br />
+                <label htmlFor="phone">Phone</label> <br />
                 <input onChange={this.phoneChange}
                     value={this.state.phone}
                     type="text" 
                     name="phone" 
+                    id="phone"
                 /> <br />
-                <label htmlFor="location">LOCATION</label> <br />
+                <label htmlFor="location">Location</label> <br />
                 <input onChange={this.locationChange}
                     value={this.state.location}
                     type="text" 
                     name="location" 
+                    id="location"
                 /> <br />
-                <label htmlFor="weddingDate">WEDDING DATE</label> <br />
+                <label htmlFor="weddingDate">Wedding Date</label> <br />
                 <input onChange={this.dateChange}
                     value={this.state.weddingDate}
                     type="date" 
                     name="weddingDate" 
+                    id="weddingDate"
                 /> <br />
 
-                <div className='button' onClick={this.onSubmit}>
+                <div id='button' onClick={this.onSubmit}>
                     UPDATE CLIENT
                 </div>
+
+                <button
+                    type="submit">
+                    UPDATE CLIENT
+                </button>
             </form>
             <Notes />
             <Photos />
