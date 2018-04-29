@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from 'antd';
+import './notes.css'
 
 export default function Notes() {
 return (
@@ -12,8 +12,8 @@ return (
         </textarea>
         
         </label> <br />
-        <Button type="primary" htmlType="submit">Register</Button>
-        <button type="submit" class="ant-btn login-form-button ant-btn-primary">SUBMIT</button>
+        <button type="submit">SUBMIT</button>
+        
     </form>
     )
 }
