@@ -4,6 +4,7 @@ import { Field, reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
 import { getBride, updateBride } from '../actions/bride';
 import { Link } from 'react-router-dom';
+import PhotoUploader from './photo-upload';
 import './edit.css';
 
 
@@ -119,6 +120,7 @@ class Edit extends React.Component {
                     placeholder="allergies: "
                 /> <br />
 
+            <PhotoUploader /> <br />
           
              <button>
                 <div id='button' onClick={this.onSubmit}>
@@ -130,7 +132,6 @@ class Edit extends React.Component {
               
             </form>
             
-            <Photos />
         </div>
     )}
 }
