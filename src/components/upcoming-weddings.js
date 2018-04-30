@@ -14,7 +14,7 @@ class UpcomingWeddings extends React.Component {
         console.log(this.props);
         const brides = this.props.brides.map((bride, index) => (
             <tr key={index}>
-                <td>{bride.weddingDate}</td>
+                <td>{bride.weddingDate}</td> 
                 <td>{bride.firstName} {bride.lastName}</td>
                 <td>{bride.location}</td>
                 <td><Link to={`/brides/${bride.id}`}>DETAIL</Link></td>
@@ -26,7 +26,7 @@ class UpcomingWeddings extends React.Component {
         <Link to="/newclient">+ NEW CLIENT</Link>
         </button>
     <h1>Upcoming Weddings</h1>
-    <table class="upcoming-wedding-table">
+    <table className="upcoming-wedding-table">
         <tbody>
             <tr>
                 <th>Date</th>
@@ -51,3 +51,12 @@ const mapStateToProps = (state) => ({
 })
 
 export default connect(mapStateToProps)(UpcomingWeddings);
+
+
+//install moment js
+//moment(bride.weddingDate).format('...')
+
+
+//sort method in backend 
+//.sort('weddingDate')
+//Bride.find().sort('weddingDate')
