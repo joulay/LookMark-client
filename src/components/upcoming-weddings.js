@@ -11,11 +11,11 @@ class UpcomingWeddings extends React.Component {
 
     }
     render() {
-        console.log(this.props);
         
         const brides = this.props.brides.map((bride, index) => (
+            
             <tr key={index}>
-                <td>{moment(bride.weddingDate).format('MMM do YY')}</td> 
+                <td>{bride.weddingDate}</td> 
                 <td>{bride.firstName} {bride.lastName}</td>
                 <td>{bride.location}</td>
                 <td><Link to={`/brides/${bride.id}`}>DETAIL</Link></td>
@@ -39,10 +39,6 @@ class UpcomingWeddings extends React.Component {
     </table>
     </div>
 
-
-
-
-
     )
   }
 }
@@ -55,8 +51,5 @@ export default connect(mapStateToProps)(UpcomingWeddings);
 
 
 
+// let weddingDate = {moment({bride.weddingDate}).format('MMM do YY')}
 
-
-//sort method in backend 
-//.sort('weddingDate')
-//Bride.find().sort('weddingDate')
