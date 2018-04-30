@@ -1,6 +1,4 @@
 import React from 'react';
-import Photos from './photo-upload';
-import { Field, reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
 import { getBride, updateBride } from '../actions/bride';
 import { Link } from 'react-router-dom';
@@ -37,7 +35,7 @@ class Edit extends React.Component {
                 notes: this.props.bride.notes,
                 id: this.props.bride.id
             }); 
-        }, 500); //without will be undefined
+        }, 500); 
     }
 
     onSubmit = () => { 
@@ -112,14 +110,14 @@ class Edit extends React.Component {
                     id="weddingDate"
                 /> <br />
                 <label htmlFor="notes">Notes</label> <br />
-                <input onChange={this.notesChange}
+                <textarea onChange={this.notesChange}
                     value={this.state.notes}
-                    type="textarea" 
+                     
                     name="notes" 
                     id="notes"
                     placeholder="allergies: "
                 /> <br />
-
+            <p></p>
             <PhotoUploader /> <br />
           
              <button>

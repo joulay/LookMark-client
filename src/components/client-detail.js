@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { getBride } from '../actions/bride';
-import Edit from './edit';
 import { Link } from 'react-router-dom';
 
 class ClientDetail extends React.Component {
@@ -35,10 +34,11 @@ class ClientDetail extends React.Component {
             <div className="deets">
                 <h2>{firstName} {lastName}</h2> 
                 <p className="date">{date}</p> <br/>
+                <p>IMAGE.jpg</p>
+                {notes} <br />
                 {phone} <br/>
                 {addy} <br/>
                 {email} <br />
-                {notes} <br />
             </div>
         </div>
     </div>

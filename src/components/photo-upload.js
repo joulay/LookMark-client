@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import { API_BASE_URL } from '../config';
 
 export default class PhotoUploader extends React.Component {
     constructor(props) {
@@ -13,31 +14,38 @@ export default class PhotoUploader extends React.Component {
   
     handleUploadImage(ev) {
       ev.preventDefault();
-  
-      const data = new FormData();
-      data.append('file', this.uploadInput.files[0]);
-      data.append('filename', this.fileName.value);
-  
-      axios.post('http://localhost:8000/upload', data)
+      
+        const data = new FormData();
+        data.append('file', this.uploadInput.files[0]);
+
+        const authToken = localStorage.getItem('authToken')
+      axios.post(`${API_BASE_URL}/upload`, {
+        headers: {
+            'Authorization': `Bearer ${authToken}`,
+            }
+        })
         .then(function (response) {
-            this.setState({ imageURL: `http://localhost:8000/${data.file}`, uploadStatus: true });
+            this.setState({ imageURL: `${API_BASE_URL}/${data.file}`, uploadStatus: true });
         })
         .catch(function (error) {
           console.log(error);
-        });
+        })
     }
+
+
+
     
     render() {
         return(
             <div className="container">
               <form onSubmit={this.handleUploadImage}>
                 <div className="form-group">
-                  <input className="form-control"  ref={(ref) => { this.uploadInput = ref; }} type="file" />
+                  <input className="form-control"  
+                    ref={(ref) => { this.uploadInput = ref; }} 
+                    type="file" />
                 </div>
       
-      
-      
-                <button className="btn btn-success" type="submit">Upload</button>
+                <button className="photo-button" type="submit">Upload</button>
       
               </form>
             </div>

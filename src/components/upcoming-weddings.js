@@ -11,11 +11,11 @@ class UpcomingWeddings extends React.Component {
 
     }
     render() {
-        
+        console.log('aklsdjalskdjalskdjalksdjalskdjajd',this.props.brides);
         const brides = this.props.brides.map((bride, index) => (
             
             <tr key={index}>
-                <td>{bride.weddingDate}</td> 
+                <td>{moment(bride.weddingDate).format('MMM Do YY')}</td> 
                 <td>{bride.firstName} {bride.lastName}</td>
                 <td>{bride.location}</td>
                 <td><Link to={`/brides/${bride.id}`}>DETAIL</Link></td>
