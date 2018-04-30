@@ -2,3 +2,18 @@
     text-align: center;
     padding: 20px;
 }
+
+.sign-in-button {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    cursor: pointer;
+    padding: 0 15px;
+    font-size: 14px;
+    border-radius: 4px;
+    height: 32px;
+    position: relative;
+    color: #fff;
+    background-color: #1890ff;
+    border-color: #1890ff;
+}
