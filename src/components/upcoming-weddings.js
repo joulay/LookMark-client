@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { getBrides } from '../actions/bride';
+import { LogOut} from './log-out';
 import './upcoming-wedding.css';
 import moment from 'moment';
 
@@ -11,7 +12,6 @@ class UpcomingWeddings extends React.Component {
 
     }
     render() {
-        console.log('aklsdjalskdjalskdjalksdjalskdjajd',this.props.brides);
         const brides = this.props.brides.map((bride, index) => (
             
             <tr key={index}>
@@ -22,10 +22,12 @@ class UpcomingWeddings extends React.Component {
             </tr>
         ))
     return (
+
     <div className="upcoming-wedding">
         <button id="newClient">
         <Link to="/newclient">+ NEW CLIENT</Link>
         </button>
+        <LogOut />
     <h1>Upcoming Weddings</h1>
     <table className="upcoming-wedding-table">
         <tbody>

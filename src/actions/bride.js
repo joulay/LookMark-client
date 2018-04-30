@@ -127,9 +127,7 @@ export const getBrides =() => (dispatch, getState) => {
         }
     })
         .then(res => res.json())
-        .then(brides => {
-            console.log(brides);
-            dispatch(getBridesSuccess(brides))})
+        .then(brides => dispatch(getBridesSuccess(brides)))
         .catch(err=> {
             console.log(err);
             dispatch(getBridesError(err))
