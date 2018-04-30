@@ -19,7 +19,7 @@ export default class PhotoUploader extends React.Component {
         data.append('file', this.uploadInput.files[0]);
 
         const authToken = localStorage.getItem('authToken')
-      axios.post(`${API_BASE_URL}/upload`, {
+      axios.post(`${API_BASE_URL}/upload`, data, {
         headers: {
             'Authorization': `Bearer ${authToken}`,
             }

@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { getBrides } from '../actions/bride';
-import { LogOut} from './log-out';
+import LogOut from './log-out';
 import './upcoming-wedding.css';
 import moment from 'moment';
 

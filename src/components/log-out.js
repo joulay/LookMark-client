@@ -23,7 +23,7 @@ export class LogOut extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-    currentUser: state.authReducer.currentUser !== null
+    currentUser: state.auth.currentUser !== null
 });
 
 export default connect(mapStateToProps)(LogOut);
