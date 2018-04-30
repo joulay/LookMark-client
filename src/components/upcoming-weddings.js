@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { getBrides } from '../actions/bride';
 import './upcoming-wedding.css';
-
+import moment from 'moment';
 
 class UpcomingWeddings extends React.Component {
     componentDidMount() {
@@ -12,9 +12,10 @@ class UpcomingWeddings extends React.Component {
     }
     render() {
         console.log(this.props);
+        
         const brides = this.props.brides.map((bride, index) => (
             <tr key={index}>
-                <td>{bride.weddingDate}</td> 
+                <td>{moment(bride.weddingDate).format('MMM do YY')}</td> 
                 <td>{bride.firstName} {bride.lastName}</td>
                 <td>{bride.location}</td>
                 <td><Link to={`/brides/${bride.id}`}>DETAIL</Link></td>
@@ -53,8 +54,7 @@ const mapStateToProps = (state) => ({
 export default connect(mapStateToProps)(UpcomingWeddings);
 
 
-//install moment js
-//moment(bride.weddingDate).format('...')
+
 
 
 //sort method in backend 
