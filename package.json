@@ -5,6 +5,7 @@
   "dependencies": {
     "fine-uploader": "^5.16.2",
     "jwt-decode": "^2.2.0",
+    "moment": "^2.22.1",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "react-redux": "^5.0.7",
