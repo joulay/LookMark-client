@@ -27,7 +27,7 @@ export default class PhotoUploader extends React.Component {
             }
         })
         .then(function (response) {
-            this.setState({ imageURL: `${API_BASE_URL}/${data.file}`, uploadStatus: true });
+            this.setState({ image: data, uploadStatus: true });
         })
         .catch(function (error) {
           console.log(error);

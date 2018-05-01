@@ -124,7 +124,6 @@ export const getBride =(id)=>(dispatch, getState)=>{
 
 export const getBrides =() => (dispatch, getState) => {
     dispatch(getBridesRequest());
-    console.log('checking as;dja;skjdhaklsjdhlaksjhd');
     const authToken = localStorage.getItem('authToken');
     fetch(`${API_BASE_URL}/brides`, {
         headers: {

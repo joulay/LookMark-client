@@ -1,7 +1,8 @@
 .sign-in {
     padding-top: 20em;
+    text-align: center;
 }
 
-.link {
-    margin: 0 auto;
+a {
+    text-decoration: none;
 }
