@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link, Redirect } from 'react-router-dom';
+import './sign-in.css';
 
 import LoginForm from './login-form';
 
@@ -12,7 +13,7 @@ function SignIn(props) {
         <div className="sign-in">
             <LoginForm />
             <p></p>
-            <Link to="/register">Create an account</Link>
+            <Link className="link" to="/register">Create an account</Link>
                       
         </div>
     )

@@ -28,6 +28,8 @@ div .upcoming-wedding {
 .upcoming-wedding-table {
     margin-left: auto;
     margin-right: auto;
+    padding-left: 4em;
+    padding-right: 4em;
 }
 
 h1 {
