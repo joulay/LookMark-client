@@ -120,8 +120,8 @@ class Edit extends React.Component {
             <p></p>
             <PhotoUploader /> <br />
           
-             <button>
-                <div className="form-button" onClick={this.onSubmit}>
+             <button className="form-button">
+                <div onClick={this.onSubmit}>
                     UPDATE CLIENT
                 </div>
               </button>
