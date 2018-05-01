@@ -78,6 +78,14 @@ export const updateBrideError = (error) => ({
     error
 })
 
+
+// export const DELETE_BRIDE_REQUEST = 'DELETE_BRIDE_REQUEST'
+// export const deleteBrideRequest = (id) => ({
+//     type:'DELETE_BRIDE_REQUEST',
+//     id
+// })
+
+
 export const newBride = user => dispatch => {
     const authToken = loadAuthToken();
     return fetch(`${API_BASE_URL}/brides`, {
@@ -100,8 +108,6 @@ export const newBride = user => dispatch => {
         });
 };
 
-
-
 export const getBride =(id)=>(dispatch, getState)=>{
     dispatch(getBrideRequest());
     const authToken = localStorage.getItem('authToken');
@@ -113,8 +119,7 @@ export const getBride =(id)=>(dispatch, getState)=>{
     })
         .then(res => res.json())
         .then(bride=> dispatch(getBrideSuccess(bride)))
-        .catch(err=> dispatch(getBrideError(err)))
-    
+        .catch(err=> dispatch(getBrideError(err))) 
 }
 
 export const getBrides =() => (dispatch, getState) => {
@@ -133,7 +138,6 @@ export const getBrides =() => (dispatch, getState) => {
             console.log(err);
             dispatch(getBridesError(err))
         })
-    
 }
 
 
@@ -159,3 +163,20 @@ export const updateBride = user => dispatch => {
             dispatch(updateBrideError(err))
         });
 };
+
+// export const deleteBride = user => dispatch => {
+//     const authToken = loadAuthToken();
+//     return fetch(`${API_BASE_URL}/brides/${user.id}`, {
+//         method: 'DELETE',
+//         headers: {
+//             'Content-Type': 'application/json',
+//             'Authorization' : `Bearer ${authToken}`
+//         },
+//     })
+//     .then(res => {
+//         if (!res.ok) {
+//           return Promise.reject(res.status);
+//         }
+//         return dispatch(deleteBrideRequest());
+//       });
+//     };

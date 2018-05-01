@@ -27,7 +27,6 @@ class ClientDetail extends React.Component {
 
        <Link to={`/home`}>HOME</Link> <br />
       
-//
 
     <div className="card">
         <div className="content">
@@ -47,12 +46,12 @@ class ClientDetail extends React.Component {
 
     </div>
 
-
+    <div className="bottom">    
         <Link to={`/edit/${this.props.match.params.id}`}> 
             <button className="new-client-button">EDIT</button>
         </Link>
 
-
+    </div>
 
     </div>
         )       
