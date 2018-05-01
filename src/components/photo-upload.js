@@ -45,7 +45,7 @@ export default class PhotoUploader extends React.Component {
                     type="file" />
                 </div>
       
-                <button className="photo-button" type="submit">Upload</button>
+                <button className="new-client-button" type="submit">Upload</button>
       
               </form>
             </div>

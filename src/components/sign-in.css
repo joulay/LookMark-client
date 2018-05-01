@@ -1,5 +1,7 @@
 .sign-in {
     text-align: center;
     padding: 20px;
+    justify-content: center;
+    display: flex;
 }
 
