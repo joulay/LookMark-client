@@ -60,7 +60,7 @@ class RegistrationForm extends React.Component{
                 /> <br />
 
                 <button
-                    className="register-button"
+                    className="form-button"
                     type="submit">
                     REGISTER 
                 </button>

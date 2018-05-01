@@ -26,7 +26,7 @@ class UpcomingWeddings extends React.Component {
     <div className="upcoming-wedding">
         
         <Link to="/newclient"> 
-            <button className="new-client-button">NEW CLIENT</button>
+            <button className="new-client-button">+ CLIENT</button>
         </Link>
         <LogOut />
     <h1>Upcoming Weddings</h1>
