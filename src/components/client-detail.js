@@ -33,8 +33,9 @@ class ClientDetail extends React.Component {
         <div className="content">
             <div className="deets">
                 <h2>{firstName} {lastName}</h2> 
-                <p className="date">{moment(date).format('MMM Do YY')}</p> <br/>
-                <p><img src='http://localhost:8080/uploads/5ae2206dec046f1a9176c1b2.jpg' height="160" width="160"/> </p>
+                <p className="date">{moment(date).format('MMM Do YYYY')}</p> <br/>
+                 <p><img src='http://localhost:8080/uploads/5ae2206dec046f1a9176c1b2.jpg' height="160" width="160"/> </p> 
+                {/*{if(has image)}*/}
                 <p><img src={`http://localhost:8080/uploads/${id}.jpg`} alt="bride picture" height="160" width="160"/> </p>
                 {notes} <br />
                 {phone} <br/>
