@@ -15,7 +15,7 @@ class UpcomingWeddings extends React.Component {
         const brides = this.props.brides.map((bride, index) => (
             
             <tr key={index}>
-                <td>{moment(bride.weddingDate).format('MMM Do YY')}</td> 
+                <td>{moment(bride.weddingDate).format('MMM Do')}</td> 
                 <td>{bride.firstName} {bride.lastName}</td>
                 <td>{bride.location}</td>
                 <td><Link to={`/brides/${bride.id}`}>DETAIL</Link></td>
@@ -24,9 +24,10 @@ class UpcomingWeddings extends React.Component {
     return (
 
     <div className="upcoming-wedding">
-        <button id="newClient">
-        <Link to="/newclient">+ NEW CLIENT</Link>
-        </button>
+        
+        <Link to="/newclient"> 
+            <button className="new-client-button">NEW CLIENT</button>
+        </Link>
         <LogOut />
     <h1>Upcoming Weddings</h1>
     <table className="upcoming-wedding-table">

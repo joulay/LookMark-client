@@ -64,6 +64,7 @@ class NewClientForm extends React.Component {
                     name="weddingDate" 
                 /> <br />
                 <button
+                    className="new-client-button"
                     type="submit">
                     ADD NEW CLIENT
                 </button>
