@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { API_BASE_URL } from '../config';
+import store from '../store'; 
 
 export default class PhotoUploader extends React.Component {
     constructor(props) {
@@ -17,9 +18,10 @@ export default class PhotoUploader extends React.Component {
       
         const data = new FormData();
         data.append('file', this.uploadInput.files[0]);
-
+        console.log(store.getState());
+        const user = store.getState().bride.currentBride.userId; 
         const authToken = localStorage.getItem('authToken')
-      axios.post(`${API_BASE_URL}/upload`, data, {
+      axios.post(`${API_BASE_URL}/upload/${user}`, data, {
         headers: {
             'Authorization': `Bearer ${authToken}`,
             }
