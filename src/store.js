@@ -7,10 +7,12 @@ import { brideReducer } from './reducers/bride';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 const store = createStore(
-    combineReducers({user:combineUser,
+    combineReducers({
+    user:combineUser,
     form: formReducer,
     auth: authReducer,
-    bride: brideReducer
+    bride: brideReducer,
+    photo: photoReducer
 }), 
 composeWithDevTools(applyMiddleware(thunk)))
 
