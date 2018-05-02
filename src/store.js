@@ -3,6 +3,7 @@ import { combineUser } from './reducers/user';
 import { reducer as formReducer } from 'redux-form';
 import thunk from 'redux-thunk';
 import authReducer from './reducers/auth';
+import photoReducer from './reducers/photo';
 import { brideReducer } from './reducers/bride';
 import { composeWithDevTools } from 'redux-devtools-extension';
 

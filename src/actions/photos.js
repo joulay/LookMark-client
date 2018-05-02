@@ -25,7 +25,7 @@ export const getPhotos = () => dispatch => {
             }
             return res.json();
         })  
-        .then(entries => {
+        .then(photos => {
             dispatch(getPhotoSuccess(photos))
         })
         .catch(err => console.log(err))

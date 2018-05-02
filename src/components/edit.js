@@ -38,7 +38,8 @@ class Edit extends React.Component {
         }, 500); 
     }
 
-    onSubmit = () => { 
+    onSubmit = (e) => { 
+        e.preventDefault();
         const {firstName, lastName, email, phone, weddingDate, location, id, notes} = this.state;
         const client = {firstName, lastName, email, phone, weddingDate, location, id, notes};
         console.log(client);

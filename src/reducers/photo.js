@@ -1,15 +1,13 @@
-import GET_PHOTO_SUCCESS from '../actions/photos';
+import { GET_PHOTO_SUCCESS } from '../actions/photos';
 
 const initialState = {
-    photos: [{
-        img: ""
-    }]
+    photos: null
 }
 
-export const photoReducer = (state = initialState, action) => {
-    if (action.type === actions.GET_PHOTO_SUCCESS) {
+export default (state = initialState, action) => {
+    if (action.type === GET_PHOTO_SUCCESS) {
         return Object.assign({}, state, {
-            entries: sortedEntries
+            photos: [...state.photos, action.photo]
           })   
         } 
     return state;     

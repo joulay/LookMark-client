@@ -1,64 +1,84 @@
 import React from 'react';
-import axios from 'axios';
-import { API_BASE_URL } from '../config';
-import store from '../store'; 
+import { connect } from 'react-redux';
 
-export default class PhotoUploader extends React.Component {
-    constructor(props) {
-      super(props);
-        this.state = {
-          uploadStatus: false
-        }
-      this.handleUploadImage = this.handleUploadImage.bind(this);
+
+class PhotoUploader extends React.Component {
+    onSubmit(e) {
+        e.preventDefault();
+
+        
     }
+
+
+    render() {
+        return (
+            <div className="container">
+                <form onSubmit={e=>this.onSubmit(e)}>
+                    <div>
+                        <input type="file" name="file" />
+                    </div>
+                    <button className="new-client-button" type="submit">Upload</button>
+                </form>
+            </div>
+        )
+    }
+}    
+
+export default connect()(PhotoUploader);
+    
+    
+    
+    // constructor(props) {
+    //   super(props);
+    //     this.state = {
+    //       uploadStatus: false
+    //     }
+    //   this.handleUploadImage = this.handleUploadImage.bind(this);
+    // }
   
   
-    handleUploadImage(ev) {
-      ev.preventDefault();
+    // handleUploadImage(ev) {
+    //   ev.preventDefault();
       
-        const data = new FormData();
-        data.append('file', this.uploadInput.files[0]);
-        console.log(store.getState());
-        const user = store.getState().bride.currentBride.userId; 
-        const authToken = localStorage.getItem('authToken')
-      axios.post(`${API_BASE_URL}/upload/${user}`, data, {
-        headers: {
-            'Authorization': `Bearer ${authToken}`,
-            }
-        })
-        .then(function (response) {
-            this.setState({ image: data, uploadStatus: true });
-        })
-        .catch(function (error) {
-          console.log(error);
-        })
-    }
+    //     const data = new FormData();
+    //     data.append('file', this.uploadInput.files[0]);
+    //     console.log(store.getState());
+    //     const user = store.getState().bride.currentBride.userId; 
+    //     const authToken = localStorage.getItem('authToken')
+    //   axios.post(`${API_BASE_URL}/upload/${user}`, data, {
+    //     headers: {
+    //         'Authorization': `Bearer ${authToken}`,
+    //         }
+    //     })
+    //     .then(function (response) {
+    //         this.setState({ image: data, uploadStatus: true });
+    //     })
+    //     .catch(function (error) {
+    //       console.log(error);
+    //     })
+    // }
 
 
 
     
-    render() {
-        return(
-            <div className="container">
-              <form onSubmit={this.handleUploadImage}>
-                <div className="form-group">
-                  <input className="form-control"  
-                    ref={(ref) => { this.uploadInput = ref; }} 
-                    type="file" />
-                </div>
+//     render() {
+//         return(
+//             <div className="container">
+//               <form onSubmit={this.handleUploadImage}>
+//                 <div className="form-group">
+//                   <input className="form-control"  
+//                     ref={(ref) => { this.uploadInput = ref; }} 
+//                     type="file" />
+//                 </div>
       
-                <button className="new-client-button" type="submit">Upload</button>
+//                 <button className="new-client-button" type="submit">Upload</button>
       
-              </form>
-            </div>
-          )
-        }
+//               </form>
+//             </div>
+//           )
+//         }
    
-   }
-
-
-
-
+//    }
 
 
 
