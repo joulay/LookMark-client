@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { getBride, updateBride } from '../actions/bride';
 import { Link } from 'react-router-dom';
-import PhotoUploader from './photo-upload';
+import { getPhotos, postPhoto } from '../actions/photos';
 import './edit.css';
 
 
@@ -35,16 +35,18 @@ class Edit extends React.Component {
                 notes: this.props.bride.notes,
                 id: this.props.bride.id
             }); 
-        }, 500); 
+        }, 500);
+        this.props.dispatch(getPhotos()) 
     }
 
     onSubmit = (e) => { 
         e.preventDefault();
         const {firstName, lastName, email, phone, weddingDate, location, id, notes} = this.state;
         const client = {firstName, lastName, email, phone, weddingDate, location, id, notes};
-        console.log(client);
-        return this.props
-            .dispatch(updateBride(client))
+       //pass photo& id 
+            this.props.dispatch(postPhoto(photo));
+            this.props.dispatch(updateBride(client));
+            
     }
 
     firstNameChange=(e => {
@@ -61,12 +63,14 @@ class Edit extends React.Component {
         this.setState({location: e.target.value})});
     notesChange=(e => {
         this.setState({notes: e.target.value})});
-    render() { 
 
+    render() { 
+        // console.log('the id: ' + JSON.stringify(this.props.location.state));
+        // console.log(this.props.location.state['currentBrideId']);
     return (
         <div>
         <Link to="/home">Back</Link>
-            <form
+            <form 
                 className="form">
                 <label htmlFor="firstName">First Name</label> <br />
                 <input onChange={this.firstNameChange}
@@ -118,8 +122,12 @@ class Edit extends React.Component {
                     id="notes"
                     placeholder="allergies: "
                 /> <br />
-            <p></p>
-            <PhotoUploader /> <br />
+                <p></p>
+
+                
+                    <input type="file" name="photo" />
+               
+
           
              <button className="form-button">
                 <div onClick={this.onSubmit}>
@@ -140,3 +148,9 @@ const mapStateToProps = (state, props) => ({
 
 
 export default connect(mapStateToProps)(Edit);
+
+//connects state to component, provides dispatch keys to same object
+//this.props = keys inside obj, which repr components 
+//dispatch keys = actions 
+
+//mapStateToProps = data better known as STATE 

@@ -74,9 +74,10 @@ export const updateBrideSuccess = (bride) => ({
 
 export const UPDATE_BRIDE_ERROR = 'UPDATE_BRIDE_ERROR'
 export const updateBrideError = (error) => ({
-    type:'UPDATE_BRIDE_ERROR',
+    type: UPDATE_BRIDE_ERROR,
     error
 })
+
 
 
 // export const DELETE_BRIDE_REQUEST = 'DELETE_BRIDE_REQUEST'
@@ -162,6 +163,9 @@ export const updateBride = user => dispatch => {
             dispatch(updateBrideError(err))
         });
 };
+
+
+
 
 // export const deleteBride = user => dispatch => {
 //     const authToken = loadAuthToken();

@@ -10,7 +10,8 @@ GET_BRIDES_SUCCESS,
 GET_BRIDES_ERROR,
 UPDATE_BRIDE_REQUEST,
 UPDATE_BRIDE_SUCCESS,
-UPDATE_BRIDE_ERROR
+UPDATE_BRIDE_ERROR,
+SET_CURRENT_BRIDE_ID
 } from '../actions/bride';
 
 
@@ -18,7 +19,7 @@ const initialState = {
     brides: [],
     currentBride: null,
     loading: false,
-    error: null
+    error: null 
 }
 
 export const brideReducer = (state = initialState, action) => {

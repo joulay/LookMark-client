@@ -1,33 +1,37 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { getPhotos } from '../actions/photos'
+import { getPhotos, postPhoto } from '../actions/photos'
 import FormData from 'form-data';
 
 class PhotoUploader extends React.Component {
+
     onSubmit(event) {
         event.preventDefault();
         let photo = new FormData();
         photo.append('file', event.target.photo.files[0]);
-        this.props.dispatch(getPhotos(photo));
+        this.props.dispatch(postPhoto(photo));
         event.target.photo.value = '';
     }
 
 
     render() {
         return (
-            <div className="container">
                 <form onSubmit={e=>this.onSubmit(e)}>
-                    <div>
-                        <input type="file" name="file" />
-                    </div>
-                    <button className="new-client-button" type="submit">Upload</button>
+                
+                        <input type="file" name="photo" />
+               
+                 
                 </form>
-            </div>
         )
     }
 }    
 
-export default connect()(PhotoUploader);
+
+const mapStateToProps = state => ({
+    bride: state.bride.currentBride
+})  
+
+export default connect(mapStateToProps)(PhotoUploader);
     
     
     

@@ -7,10 +7,12 @@ import moment from 'moment';
 class ClientDetail extends React.Component {
     componentDidMount() {
         this.props.dispatch(getBride(this.props.match.params.id));
+
     }
 
     render() {
-        let firstName, lastName, date, phone, addy, email, notes, id;
+        const currentBrideId = this.props.location.state.currentBrideId; 
+        let firstName, lastName, date, phone, addy, email, notes;
         if(this.props.bride) {
             firstName = this.props.bride.firstName;
             lastName = this.props.bride.lastName;
@@ -19,7 +21,6 @@ class ClientDetail extends React.Component {
             addy = this.props.bride.location;
             email = this.props.bride.email;
             notes = this.props.bride.notes;
-            id = this.props.bride.id;
     }
 
     return (  
@@ -47,7 +48,11 @@ class ClientDetail extends React.Component {
     </div>
 
     <div className="bottom">    
-        <Link to={`/edit/${this.props.match.params.id}`}> 
+        <Link 
+            to= {{    
+                pathname: `/edit/${this.props.match.params.id}`,
+                state: { currentBrideId } 
+            }}> 
             <button className="new-client-button">EDIT</button>
         </Link>
 
@@ -66,3 +71,6 @@ const mapStateToProps = (state, props) => ({
 
 
 export default connect(mapStateToProps)(ClientDetail);
+
+
+//this form will know bride ID without changing store state

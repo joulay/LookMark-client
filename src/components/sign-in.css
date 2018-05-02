@@ -1,8 +1,14 @@
 .sign-in {
-    padding-top: 20em;
+    padding-top: 4em;
     text-align: center;
 }
 
 a {
     text-decoration: none;
+}
+
+
+#logo {
+    max-width: 32%;
+    margin: 10%;
 }

@@ -18,7 +18,12 @@ class UpcomingWeddings extends React.Component {
                 <td>{moment(bride.weddingDate).format('MMM Do')}</td> 
                 <td>{bride.firstName} {bride.lastName}</td>
                 <td>{bride.location}</td>
-                <td><Link to={`/brides/${bride.id}`}>DETAILS</Link></td>
+                <td><Link 
+                    to= {{ 
+                        pathname: `/brides/${bride.id}`,
+                        state: { currentBrideId: bride.id },
+                    }}
+                    >DETAILS</Link></td>
             </tr>
         ))
     return (
