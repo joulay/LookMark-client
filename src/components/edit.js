@@ -2,7 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { getBride, updateBride } from '../actions/bride';
 import { Link } from 'react-router-dom';
-import { getPhotos, postPhoto } from '../actions/photos';
+import { postPhoto } from '../actions/photos';
+import PhotoUploader from './photo-upload';
 import './edit.css';
 
 
@@ -36,7 +37,7 @@ class Edit extends React.Component {
                 id: this.props.bride.id
             }); 
         }, 500);
-        this.props.dispatch(getPhotos()) 
+        // this.props.dispatch(getPhotos()) 
     }
 
     onSubmit = (e) => { 
@@ -44,7 +45,8 @@ class Edit extends React.Component {
         const {firstName, lastName, email, phone, weddingDate, location, id, notes} = this.state;
         const client = {firstName, lastName, email, phone, weddingDate, location, id, notes};
        //pass photo& id 
-            this.props.dispatch(postPhoto(photo));
+
+            // this.props.dispatch(postPhoto(this.props.location.state.currentBrideId));
             this.props.dispatch(updateBride(client));
             
     }
@@ -122,12 +124,7 @@ class Edit extends React.Component {
                     id="notes"
                     placeholder="allergies: "
                 /> <br />
-                <p></p>
-
-                
-                    <input type="file" name="photo" />
-               
-
+ 
           
              <button className="form-button">
                 <div onClick={this.onSubmit}>
@@ -136,7 +133,10 @@ class Edit extends React.Component {
               </button>
                
             </form>
-            
+
+              <PhotoUploader />
+              
+
         </div>
     )}
 }

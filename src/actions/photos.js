@@ -1,4 +1,5 @@
 import { API_BASE_URL } from '../config';
+import store from '../store';
 
 
 export const GET_PHOTO_SUCCESS = 'GET_PHOTO_SUCCESS';
@@ -34,13 +35,15 @@ export const getPhotos = () => dispatch => {
 
 
 export const postPhoto = (photo) => dispatch => {
+   
     const authToken = localStorage.getItem('authToken');
-    const brideId = localStorage.getItem('brideId');
-    console.log(brideId);
-      fetch(`${API_BASE_URL}/photos/${brideId}`, {
+    const brideId = store.getState().bride.currentBride.id;
+    
+      fetch(`${API_BASE_URL}/photos`, {
         method: 'POST',
-        header: {
+        headers: {
             Authorization: `Bearer ${authToken}`
+           
         },
         body: photo
     })

@@ -3,6 +3,11 @@ import { connect } from 'react-redux';
 import { getBride } from '../actions/bride';
 import { Link } from 'react-router-dom';
 import moment from 'moment';
+import UIkit from 'uikit';
+import Icons from 'uikit/dist/js/uikit-icons';
+
+UIkit.use(Icons);
+
 
 class ClientDetail extends React.Component {
     componentDidMount() {
@@ -11,7 +16,8 @@ class ClientDetail extends React.Component {
     }
 
     render() {
-        const currentBrideId = this.props.location.state.currentBrideId; 
+        // const currentBrideId = this.props.location.state.currentBrideId; 
+        // console.log(currentBrideId);
         let firstName, lastName, date, phone, addy, email, notes;
         if(this.props.bride) {
             firstName = this.props.bride.firstName;
@@ -26,7 +32,8 @@ class ClientDetail extends React.Component {
     return (  
     <div className="client-detail">
 
-       <Link to={`/home`}>HOME</Link> <br />
+       <Link to={`/home`}><span uk-icon="icon: arrow-left; ratio: 1"></span></Link> <br />
+       
       
 
     <div className="card">
@@ -50,8 +57,8 @@ class ClientDetail extends React.Component {
     <div className="bottom">    
         <Link 
             to= {{    
-                pathname: `/edit/${this.props.match.params.id}`,
-                state: { currentBrideId } 
+                pathname: `/edit/${this.props.match.params.id}`
+                // state: { currentBrideId } 
             }}> 
             <button className="new-client-button">EDIT</button>
         </Link>
@@ -73,4 +80,3 @@ const mapStateToProps = (state, props) => ({
 export default connect(mapStateToProps)(ClientDetail);
 
 
-//this form will know bride ID without changing store state

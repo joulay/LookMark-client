@@ -9,6 +9,8 @@ class PhotoUploader extends React.Component {
         event.preventDefault();
         let photo = new FormData();
         photo.append('file', event.target.photo.files[0]);
+
+        console.log(event.target.photo.files);
         this.props.dispatch(postPhoto(photo));
         event.target.photo.value = '';
     }
@@ -16,12 +18,14 @@ class PhotoUploader extends React.Component {
 
     render() {
         return (
+            <div className="container">
                 <form onSubmit={e=>this.onSubmit(e)}>
                 
                         <input type="file" name="photo" />
                
-                 
+                    <button className="new-client-button" type="submit">Upload</button>
                 </form>
+            </div>
         )
     }
 }    
