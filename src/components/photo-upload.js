@@ -1,12 +1,15 @@
 import React from 'react';
 import { connect } from 'react-redux';
-
+import { getPhotos } from '../actions/photos'
+import FormData from 'form-data';
 
 class PhotoUploader extends React.Component {
-    onSubmit(e) {
-        e.preventDefault();
-
-        
+    onSubmit(event) {
+        event.preventDefault();
+        let photo = new FormData();
+        photo.append('file', event.target.photo.files[0]);
+        this.props.dispatch(getPhotos(photo));
+        event.target.photo.value = '';
     }
 
 
