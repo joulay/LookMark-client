@@ -8,10 +8,34 @@ export const getPhotoSuccess = photos => ({
 })
 
 
+export const getPhotos = () => dispatch => {
+    const authToken = localStorage.getItem('authToken');
+    const brideId = localStorage.getItem('brideId');
+      fetch(`${API_BASE_URL}/api/photos/${brideId}`, {
+          method: 'GET',
+          headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${authToken}`
+          }
+      })
+        .then(res => {
+            if(!res.ok) {
+                return Promise.reject(res.statusText);
+            }
+            return res.json();
+        })  
+        .then(entries => {
+            dispatch(getPhotoSuccess(photos))
+        })
+        .catch(err => console.log(err))
+};
+
+
 export const postPhoto = (photo) => dispatch => {
     const authToken = localStorage.getItem('authToken');
     const brideId = localStorage.getItem('brideId');
-    fetch(`${API_BASE_URL}/api/photos/${brideId}`, {
+      fetch(`${API_BASE_URL}/api/photos/${brideId}`, {
         method: 'POST',
         header: {
             Authorization: `Bearer ${authToken}`
@@ -28,6 +52,8 @@ export const postPhoto = (photo) => dispatch => {
             dispatch(getPhotoSuccess(response.photos));
         });
 };
+
+
 
 // const fetchPhotoSuccess = (users) => ({
 //     type: 'FETCH_PHOTOS_SUCCESS',
