@@ -134,15 +134,11 @@ export const getBrides =() => (dispatch, getState) => {
     })
         .then(res => res.json())
         .then(brides => dispatch(getBridesSuccess(brides)))
-        .catch(err=> {
-            console.log(err);
-            dispatch(getBridesError(err))
-        })
+        .catch(err=> dispatch(getBridesError(err)))
 }
 
 
 export const updateBride = user => dispatch => {
-    console.log(user);
     const authToken = loadAuthToken();
     return fetch(`${API_BASE_URL}/brides/${user.id}`, {
         method: 'PUT',

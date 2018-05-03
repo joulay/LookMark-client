@@ -22,7 +22,6 @@ const initialState = {
 }
 
 export const brideReducer = (state = initialState, action) => {
-    console.log(state, action);
     if(action.type === CREATE_BRIDE_SUCCESS) {
         return Object.assign({}, state, {
             brides: [...state.brides, action.bride]
@@ -45,7 +44,6 @@ export const brideReducer = (state = initialState, action) => {
         })
     }
     else if(action.type === GET_BRIDE_SUCCESS){
-        if (!action.bride) debugger;
         return Object.assign({}, state,{
             currentBride: action.bride,
             loading: false

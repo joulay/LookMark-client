@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { getPhotos, postPhoto } from '../actions/photos'
 import FormData from 'form-data';
-import { API_BASE_URL, PHOTO_BASE_URL } from '../config.js';
+import { PHOTO_BASE_URL } from '../config.js';
 
 
 class PhotoUploader extends React.Component {
@@ -22,7 +22,7 @@ class PhotoUploader extends React.Component {
        const allPhotos = this.props.photos.map((value, index) => {
            return (
                 <li key={index} className="photo-list">
-                    <img className="photo-image" src={`${PHOTO_BASE_URL}${value}`} width="160" height="160" alt="client" /> 
+                    <img className="photo-image" src={`${PHOTO_BASE_URL}${value}`} width="320" height="320" alt="client" /> 
                 </li>
            )
        })

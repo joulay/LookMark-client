@@ -16,8 +16,6 @@ class ClientDetail extends React.Component {
     }
 
     render() {
-        // const currentBrideId = this.props.location.state.currentBrideId; 
-        // console.log(currentBrideId);
         let firstName, lastName, date, phone, addy, email, notes, photos;
         if(this.props.bride) {
             firstName = this.props.bride.firstName;
@@ -28,8 +26,12 @@ class ClientDetail extends React.Component {
             email = this.props.bride.email;
             notes = this.props.bride.notes;
             photos = this.props.bride.photos;
-    }
+    
+            console.log(this.props.bride)
 
+            
+            
+    }
     return (  
     <div className="client-detail">
         <div className="home-nav">
@@ -42,13 +44,20 @@ class ClientDetail extends React.Component {
             <div className="deets">
                 <h2>{firstName} {lastName}</h2> 
                 <p className="date">{moment(date).format('MMM Do YYYY')}</p> <br/>
-                 {/* <p><img src="" height="280" width="280"/> </p>  */}
-                {/* {if(has image)} */}
-                {/* <p><img src={`http://localhost:8080/uploads/${id}.jpg`} alt="preview" height="160" width="160"/> </p> */}
-                {notes} <br />
-                {phone} <br/>
-                {addy} <br/>
+                {phone} <br />
+                {addy} <br />
                 {email} <br />
+                {notes} <br />
+                {photos && photos.map((value, index) => {
+                return (
+                     <li key={index} className="photo-list">
+                         <img className="photo-image" src={`${value.photo}`} /> 
+                     </li>
+                )
+            })}
+
+
+                
             </div>
         </div>
 
@@ -59,7 +68,6 @@ class ClientDetail extends React.Component {
         <Link 
             to= {{    
                 pathname: `/edit/${this.props.match.params.id}`
-                // state: { currentBrideId } 
             }}> 
             <button className="new-client-button">EDIT</button>
         </Link>

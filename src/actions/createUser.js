@@ -30,9 +30,7 @@ export const newUser = user => dispatch => {
         },
         body: JSON.stringify(user)
     })
-        .then(res => {
-            console.log(res);
-            return res.json()})
+        .then(res => res.json())
         .then(()=> {
             return dispatch(createNewUserSuccess())
             

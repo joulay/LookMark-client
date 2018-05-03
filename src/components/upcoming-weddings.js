@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { getBrides } from '../actions/bride';
 import LogOut from './log-out';
 import './upcoming-wedding.css';
-import background from '../decor/peony.jpg';
+import background from '../decor/darkblackmarble.jpg';
 import moment from 'moment';
 
 
@@ -12,9 +12,10 @@ import moment from 'moment';
 const sectionStyle = {
     width: "100%",
     height: "100VH",
-    backgroundImage: `url(${background})`,
-    backgroundRepeat: "no-repeat"
+    backgroundImage: `url(${background})`
   };
+  //background size-pixel? percent?
+  //backgroundSixeCover fill greater of height than width
 
 
 class UpcomingWeddings extends React.Component {
@@ -24,7 +25,6 @@ class UpcomingWeddings extends React.Component {
     }
     render() {
         const brides = this.props.brides.map((bride, index) => (
-            
             <tr key={index}>
                 <td>{moment(bride.weddingDate).format('MMM Do')}</td> 
                 <td>{bride.firstName} {bride.lastName}</td>

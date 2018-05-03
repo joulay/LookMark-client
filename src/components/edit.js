@@ -77,7 +77,6 @@ class Edit extends React.Component {
         // console.log(this.props.location.state['currentBrideId']);
     return (
         <section style={ sectionStyle }>
-        <div>
         <Link to="/home">Back</Link>
             <form 
                 className="form">
@@ -141,10 +140,10 @@ class Edit extends React.Component {
                
             </form>
 
-              <PhotoUploader />
-
-
-        </div>
+            <div>
+                <PhotoUploader />
+            </div>
+            
         </section>
     )}
 }
