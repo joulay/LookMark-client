@@ -19,8 +19,7 @@ function SignIn(props) {
         return <Redirect to="/home" />;
     }
 
-// class SignIn extends React.Component {
-//     render() {
+
     return (
         <section style={ sectionStyle }>
             <div className="sign-in">
