@@ -3,8 +3,15 @@ import { Link } from 'react-router-dom';
 import { Field, reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
 import { newBride } from '../actions/bride';
+import background from '../decor/whitemarble.jpg';
 import Input from './input';
 import './client.css';
+
+const sectionStyle = {
+    width: "100%",
+    height: "100VH",
+    backgroundImage: `url(${background})`
+  };
 
 class NewClientForm extends React.Component {
     onSubmit(values) {
@@ -17,6 +24,7 @@ class NewClientForm extends React.Component {
     }
     render() {
     return (
+        <section style={ sectionStyle }>
         <div>
             <Link to="/home">Back</Link>
             <form 
@@ -70,6 +78,7 @@ class NewClientForm extends React.Component {
                 </button>
             </form>
         </div>
+        </section>
         )
     }  
 }

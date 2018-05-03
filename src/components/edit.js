@@ -4,8 +4,14 @@ import { getBride, updateBride } from '../actions/bride';
 import { Link } from 'react-router-dom';
 import { postPhoto } from '../actions/photos';
 import PhotoUploader from './photo-upload';
+import background from '../decor/darkblackmarble.jpg';
 import './edit.css';
 
+const sectionStyle = {
+    width: "100%",
+    height: "100VH",
+    backgroundImage: `url(${background})`
+  };
 
 class Edit extends React.Component {
     constructor(props) {
@@ -70,6 +76,7 @@ class Edit extends React.Component {
         // console.log('the id: ' + JSON.stringify(this.props.location.state));
         // console.log(this.props.location.state['currentBrideId']);
     return (
+        <section style={ sectionStyle }>
         <div>
         <Link to="/home">Back</Link>
             <form 
@@ -135,9 +142,10 @@ class Edit extends React.Component {
             </form>
 
               <PhotoUploader />
-              
+
 
         </div>
+        </section>
     )}
 }
 

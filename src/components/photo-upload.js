@@ -32,7 +32,7 @@ class PhotoUploader extends React.Component {
             <div className="container">
                 <form onSubmit={e=>this.onSubmit(e)}>
                 
-                        <input type="file" name="photo" />
+                        <input className="photo-input" type="file" name="photo" />
                
                     <button className="new-client-button" type="submit">Upload</button>
                 </form>
