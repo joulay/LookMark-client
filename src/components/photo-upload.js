@@ -13,15 +13,12 @@ class PhotoUploader extends React.Component {
         event.preventDefault();
         let photo = new FormData();
         photo.append('file', event.target.photo.files[0]);
-
-        console.log(event.target.photo.files);
         this.props.dispatch(postPhoto(photo));
         event.target.photo.value = '';
     }
 
 
     render() {
-        console.log(this.props.photos)
        const allPhotos = this.props.photos.map((value, index) => {
            return (
                 <li key={index} className="photo-list">

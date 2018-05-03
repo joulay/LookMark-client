@@ -17,7 +17,6 @@ export const createNewPhotoSuccess = photo => ({
 
 export const getPhotos = () => dispatch => {
     const authToken = localStorage.getItem('authToken');
-   
     const brideId = store.getState().bride.currentBride.id;
   
       fetch(`${API_BASE_URL}/photos/${brideId}`, {
@@ -35,7 +34,6 @@ export const getPhotos = () => dispatch => {
             return res.json();
         })  
         .then(photos => {
-            console.log(photos)
             return dispatch(getPhotoSuccess(photos))
         })
         .catch(err => console.log(err))
@@ -64,7 +62,6 @@ export const postPhoto = (photo) => dispatch => {
         })
         .then(response => {
             dispatch(createNewPhotoSuccess(response));
-            console.log('asdadsadadasd', response);
         });
 };
 

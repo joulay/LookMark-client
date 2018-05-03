@@ -8,11 +8,11 @@ import background from '../decor/blackmarble.jpg';
 import './registration-form.css';
 
 const sectionStyle = {
-    width: "100%",
+    backgroundSize: "100% 100%",
     height: "100VH",
+    backgroundRepeat: "no-repeat",
     backgroundImage: `url(${background})`
   };
-
 
 export class RegistrationForm extends React.Component{
     constructor(props) {

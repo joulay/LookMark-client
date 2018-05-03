@@ -17,8 +17,6 @@ export class NewClientForm extends React.Component {
     onSubmit(values) {
         const {firstName, lastName, email, phone, weddingDate, location} = values;
         const client = {firstName, lastName, email, phone, weddingDate, location};
-        console.log(client);
-        // const id = 
         return this.props
           .dispatch(newBride(client))
     }
