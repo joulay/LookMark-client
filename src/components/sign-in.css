@@ -1,14 +1,19 @@
 .sign-in {
-    padding-top: 4em;
+    padding-top: 5.5em;
     text-align: center;
 }
 
-a {
+.create-link {
     text-decoration: none;
+    color: #E5E7E9;
 }
 
+a {
+    text-decoration: none; 
+}
 
 #logo {
-    max-width: 32%;
-    margin: 10%;
+    max-width: 45%;
+    margin: 15%;
 }
+

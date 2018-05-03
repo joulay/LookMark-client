@@ -57,7 +57,7 @@ export const postPhoto = (photo) => dispatch => {
         })
         .then(response => {
             dispatch(getPhotoSuccess(response.photos));
-            console.log(response.photos);
+            // console.log(response.photos);
         });
 };
 
