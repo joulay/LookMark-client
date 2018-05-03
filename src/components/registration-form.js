@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import { combineUser } from '../reducers/user';
+import { required } from './validators';
 import { Field, reduxForm } from 'redux-form';
 import  { newUser } from '../actions/createUser';
 import Input from './input';
@@ -14,7 +14,7 @@ const sectionStyle = {
   };
 
 
-class RegistrationForm extends React.Component{
+export class RegistrationForm extends React.Component{
     constructor(props) {
         super(props) 
 
@@ -47,24 +47,28 @@ class RegistrationForm extends React.Component{
                         type="text" 
                         name="fullName" 
                         placeholder="FULL NAME"
+                        validate={[required]}
                     /> <br />
 
                     <Field component={Input}
                         type="email" 
                         name="email"  
                         placeholder="EMAIL"
+                        validate={[required]}
                     /> <br />
 
                     <Field component={Input}
                         type="text" 
                         name="username" 
                         placeholder="USERNAME"
+                        validate={[required]}
                     /> <br />
 
                     <Field component={Input}
                         type="text" 
                         name="password" 
                         placeholder="PASSWORD"
+                        validate={[required]}
                     /> <br />
 
                     <button
@@ -83,7 +87,7 @@ class RegistrationForm extends React.Component{
     }  
 }
 
-//validations 
+
 
 
 export default reduxForm({

@@ -8,6 +8,12 @@ export const getPhotoSuccess = photos => ({
     photos
 })
 
+export const CREATE_NEW_PHOTO_SUCCESS = 'CREATE_NEW_PHOTO_SUCCESS';
+export const createNewPhotoSuccess = photo => ({
+    type: CREATE_NEW_PHOTO_SUCCESS,
+    photo
+})
+
 
 export const getPhotos = () => dispatch => {
     const authToken = localStorage.getItem('authToken');
@@ -35,6 +41,9 @@ export const getPhotos = () => dispatch => {
         .catch(err => console.log(err))
 };
 
+//have the reference in db, pass string to client that are state to render images
+//add one photo to existing array of photos
+
 
 export const postPhoto = (photo) => dispatch => {
    
@@ -56,8 +65,8 @@ export const postPhoto = (photo) => dispatch => {
             return res.json();
         })
         .then(response => {
-            dispatch(getPhotoSuccess(response.photos));
-            // console.log(response.photos);
+            dispatch(createNewPhotoSuccess(response.photos));
+            console.log(response);
         });
 };
 

@@ -1,4 +1,4 @@
-import { GET_PHOTO_SUCCESS } from '../actions/photos';
+import { GET_PHOTO_SUCCESS, CREATE_NEW_PHOTO_SUCCESS } from '../actions/photos';
 
 const initialState = {
     photos: [],
@@ -11,5 +11,11 @@ export default (state = initialState, action) => {
             photos: action.photos
           })   
         } 
+    if (action.type === CREATE_NEW_PHOTO_SUCCESS) {
+        return Object.assign({}, state, {
+            photos: [...state.photos, action.photo]
+        })
+    }
     return state;     
 }
+

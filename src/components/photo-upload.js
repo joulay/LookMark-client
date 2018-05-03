@@ -23,7 +23,7 @@ class PhotoUploader extends React.Component {
        const allPhotos = this.props.photos.map((value, index) => {
            return (
                <li key={index} className="photo-list">
-                    <img className="photo-image" src={`${value.photo}`} alt="client" /> 
+                    <img className="photo-image" src={`/photos/${value}`} width="160" height="160" alt="client" /> 
                 </li>
            )
        })
