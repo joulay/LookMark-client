@@ -13,7 +13,7 @@ const sectionStyle = {
     backgroundImage: `url(${background})`
   };
 
-class NewClientForm extends React.Component {
+export class NewClientForm extends React.Component {
     onSubmit(values) {
         const {firstName, lastName, email, phone, weddingDate, location} = values;
         const client = {firstName, lastName, email, phone, weddingDate, location};
@@ -84,19 +84,10 @@ class NewClientForm extends React.Component {
 }
 
 
-// const mapStateToProps = (state, props) => ({
-//         value: state.id
-// });
-
-NewClientForm = connect(
-    // state => ({
-    //     initialValues: state.props.initialValues
-    // })
-)(NewClientForm)
+NewClientForm = connect()(NewClientForm)
 
 export default reduxForm ({
     form: 'client',
-    // enableReinitialize: true 
 })(NewClientForm);
 
 

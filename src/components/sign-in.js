@@ -8,8 +8,9 @@ import './sign-in.css';
 import LoginForm from './login-form';
 
 const sectionStyle = {
-    width: "100%",
+    backgroundSize: "100% 100%",
     height: "100VH",
+    backgroundRepeat: "no-repeat",
     backgroundImage: `url(${background})`
   };
 

@@ -41,8 +41,6 @@ export const getPhotos = () => dispatch => {
         .catch(err => console.log(err))
 };
 
-//have the reference in db, pass string to client that are state to render images
-//add one photo to existing array of photos
 
 
 export const postPhoto = (photo) => dispatch => {
@@ -65,23 +63,10 @@ export const postPhoto = (photo) => dispatch => {
             return res.json();
         })
         .then(response => {
-            dispatch(createNewPhotoSuccess(response.photos));
-            console.log(response);
+            dispatch(createNewPhotoSuccess(response));
+            console.log('asdadsadadasd', response);
         });
 };
 
 
 
-// const fetchPhotoSuccess = (users) => ({
-//     type: 'FETCH_PHOTOS_SUCCESS',
-//     users
-// })
-
-// export const fetchPhoto = () => {
-//     return (dispatch) => {
-//         fetch(`${API_BASE_URL}/api/getphotos/`)
-//         .then(response => response.json())
-//         .then(photo => dispatch(fetchPhotoSuccess(photo)))
-//         .catch(err => console.log(err))
-//     }
-// }
