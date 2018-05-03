@@ -5,6 +5,10 @@ import { getBrides } from '../actions/bride';
 import LogOut from './log-out';
 import './upcoming-wedding.css';
 import moment from 'moment';
+import UIkit from 'uikit';
+import Icons from 'uikit/dist/js/uikit-icons';
+
+UIkit.use(Icons);
 
 class UpcomingWeddings extends React.Component {
     componentDidMount() {
@@ -34,7 +38,7 @@ class UpcomingWeddings extends React.Component {
             <button className="new-client-button">+ CLIENT</button>
         </Link>
         <LogOut />
-    <h1>Upcoming Weddings</h1>
+    <h1 class="uk-heading-line uk-text-center"><span>Upcoming Weddings</span></h1>
     <table className="upcoming-wedding-table">
         <tbody>
             <tr>

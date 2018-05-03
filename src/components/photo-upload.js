@@ -2,9 +2,12 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { getPhotos, postPhoto } from '../actions/photos'
 import FormData from 'form-data';
+import {API_BASE_URL} from '../config.js';
 
 class PhotoUploader extends React.Component {
-
+    componentDidMount(){
+        this.props.dispatch(getPhotos())
+    }
     onSubmit(event) {
         event.preventDefault();
         let photo = new FormData();
@@ -17,6 +20,14 @@ class PhotoUploader extends React.Component {
 
 
     render() {
+       const allPhotos = this.props.photos.map((value, index) => {
+           return (
+               <li key={index} className="photo-list">
+                    <img className="photo-image" src={`${API_BASE_URL}${value.photo}`} alt="client" /> 
+                </li>
+           )
+       })
+
         return (
             <div className="container">
                 <form onSubmit={e=>this.onSubmit(e)}>
@@ -25,15 +36,21 @@ class PhotoUploader extends React.Component {
                
                     <button className="new-client-button" type="submit">Upload</button>
                 </form>
+                {allPhotos}
             </div>
+
+
         )
     }
 }    
 
 
 const mapStateToProps = state => ({
-    bride: state.bride.currentBride
+    bride: state.bride.currentBride,
+    photos: state.photo.photos
 })  
+
+
 
 export default connect(mapStateToProps)(PhotoUploader);
     

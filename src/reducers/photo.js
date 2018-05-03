@@ -1,13 +1,14 @@
 import { GET_PHOTO_SUCCESS } from '../actions/photos';
 
 const initialState = {
-    photos: null
+    photos: [],
 }
 
 export default (state = initialState, action) => {
     if (action.type === GET_PHOTO_SUCCESS) {
+        console.log()
         return Object.assign({}, state, {
-            photos: [...state.photos, action.photo]
+            photos: action.photos
           })   
         } 
     return state;     

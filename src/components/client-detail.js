@@ -18,7 +18,7 @@ class ClientDetail extends React.Component {
     render() {
         // const currentBrideId = this.props.location.state.currentBrideId; 
         // console.log(currentBrideId);
-        let firstName, lastName, date, phone, addy, email, notes;
+        let firstName, lastName, date, phone, addy, email, notes, photos;
         if(this.props.bride) {
             firstName = this.props.bride.firstName;
             lastName = this.props.bride.lastName;
@@ -27,13 +27,14 @@ class ClientDetail extends React.Component {
             addy = this.props.bride.location;
             email = this.props.bride.email;
             notes = this.props.bride.notes;
+            photos = this.props.bride.photos;
     }
 
     return (  
     <div className="client-detail">
-
-       <Link to={`/home`}><span uk-icon="icon: arrow-left; ratio: 1"></span></Link> <br />
-       
+        <div className="home-nav">
+            <Link to={`/home`}><span uk-icon="icon: arrow-left; ratio: 1.5"></span></Link> <br />
+        </div>
       
 
     <div className="card">
@@ -41,7 +42,7 @@ class ClientDetail extends React.Component {
             <div className="deets">
                 <h2>{firstName} {lastName}</h2> 
                 <p className="date">{moment(date).format('MMM Do YYYY')}</p> <br/>
-                 <p><img src="" height="280" width="280"/> </p> 
+                 {/* <p><img src="" height="280" width="280"/> </p>  */}
                 {/* {if(has image)} */}
                 {/* <p><img src={`http://localhost:8080/uploads/${id}.jpg`} alt="preview" height="160" width="160"/> </p> */}
                 {notes} <br />

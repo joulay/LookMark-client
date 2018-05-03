@@ -11,8 +11,9 @@ export const getPhotoSuccess = photos => ({
 
 export const getPhotos = () => dispatch => {
     const authToken = localStorage.getItem('authToken');
-    const brideId = localStorage.getItem('brideId');
-    console.log(brideId);
+   
+    const brideId = store.getState().bride.currentBride.id;
+  
       fetch(`${API_BASE_URL}/photos/${brideId}`, {
           method: 'GET',
           headers: {
@@ -39,7 +40,7 @@ export const postPhoto = (photo) => dispatch => {
     const authToken = localStorage.getItem('authToken');
     const brideId = store.getState().bride.currentBride.id;
     
-      fetch(`${API_BASE_URL}/photos`, {
+      fetch(`${API_BASE_URL}/photos/${brideId}`, {
         method: 'POST',
         headers: {
             Authorization: `Bearer ${authToken}`
@@ -55,6 +56,7 @@ export const postPhoto = (photo) => dispatch => {
         })
         .then(response => {
             dispatch(getPhotoSuccess(response.photos));
+            console.log(response.photos);
         });
 };
 
