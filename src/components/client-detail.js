@@ -68,7 +68,7 @@ class ClientDetail extends React.Component {
             to= {{    
                 pathname: `/edit/${this.props.match.params.id}`
             }}> 
-            <button className="new-client-button">EDIT</button>
+            <button className="edit-button">EDIT</button>
         </Link>
 
     </div>

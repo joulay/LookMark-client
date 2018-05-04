@@ -25,7 +25,9 @@ export class NewClientForm extends React.Component {
     return (
         <section style={ sectionStyle }>
         <div>
-            <Link to="/home">Back</Link>
+            <div className="home-nav">
+                <Link to={`/home`}><span uk-icon="icon: arrow-left; ratio: 1.5"></span></Link> <br />
+            </div>
             <form 
                 className="form"
                 onSubmit={this.props.handleSubmit(values => 

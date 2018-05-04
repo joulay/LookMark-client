@@ -17,3 +17,23 @@
   .photo-input {
     color: white;
   }
+
+  .edit-button {
+    line-height: 1.5;
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    padding: 0 15px;
+    font-size: 14px;
+    border-radius: 4px;
+    height: 32px;
+    position: relative;
+    color: rgba(0,0,0,.65);
+    background-color: #fff;
+    border-color:#B2DFDB;
+}
+

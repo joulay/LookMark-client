@@ -22,7 +22,7 @@ class PhotoUploader extends React.Component {
        const allPhotos = this.props.photos.map((value, index) => {
            return (
                 <li key={index} className="photo-list">
-                    <img className="photo-image" src={`${PHOTO_BASE_URL}${value}`} width="320" height="320" alt="client" /> 
+                    <img className="photo-image" src={`${PHOTO_BASE_URL}${value}`} alt="client" /> 
                 </li>
            )
        })
@@ -33,7 +33,7 @@ class PhotoUploader extends React.Component {
                 
                         <input className="photo-input" type="file" name="photo" />
                         
-                    <button className="new-client-button" type="submit">Upload</button>
+                    <button className="edit-button" type="submit">UPLOAD</button>
                 </form>
                 {allPhotos ? allPhotos : ''}
             </div>

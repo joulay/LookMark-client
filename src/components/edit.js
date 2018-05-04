@@ -74,8 +74,10 @@ class Edit extends React.Component {
         // console.log('the id: ' + JSON.stringify(this.props.location.state));
         // console.log(this.props.location.state['currentBrideId']);
     return (
-        <section style={ sectionStyle }>
-        <Link to="/home">Back</Link>
+        <section >
+            <div className="home-nav">
+                <Link to={`/home`}><span uk-icon="icon: arrow-left; ratio: 1.5"></span></Link> <br />
+            </div>
             <form 
                 className="form">
                 <label htmlFor="firstName">First Name</label> <br />

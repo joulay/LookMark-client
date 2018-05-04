@@ -1,5 +1,6 @@
 .form {
-    max-width: 300px;
+    max-width: 265px;
+    margin-top:2rem;
   }
   
 
@@ -19,6 +20,10 @@
     perspective: 500px;
   } */
 
+.back-button{
+  color: grey;
+  
+}
 
 .content {
   position: absolute;
@@ -55,6 +60,7 @@
   border-color: #1890ff;
   width: 100%
 }
+
 
 .bottom {
   margin-bottom: 2rem;
