@@ -3,14 +3,14 @@ import { connect } from 'react-redux';
 import { getBride, updateBride } from '../actions/bride';
 import { Link } from 'react-router-dom';
 import PhotoUploader from './photo-upload';
-import background from '../decor/darkblackmarble.jpg';
+// import background from '../decor/darkblackmarble.jpg';
 import './edit.css';
 
-const sectionStyle = {
-    width: "100%",
-    height: "100VH",
-    backgroundImage: `url(${background})`
-  };
+// const sectionStyle = {
+//     width: "100%",
+//     height: "100VH",
+//     backgroundImage: `url(${background})`
+//   };
 
 class Edit extends React.Component {
     constructor(props) {
