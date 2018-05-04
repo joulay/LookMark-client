@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { getBride, updateBride } from '../actions/bride';
 import { Link } from 'react-router-dom';
-import { postPhoto } from '../actions/photos';
 import PhotoUploader from './photo-upload';
 import background from '../decor/darkblackmarble.jpg';
 import './edit.css';
@@ -30,8 +29,7 @@ class Edit extends React.Component {
 
     componentDidMount() {
         this.props.dispatch(getBride(this.props.match.params.id));
-        setTimeout(() => {(
-            this.props.bride);
+        setTimeout(() => {
             this.setState({     
                 firstName: this.props.bride.firstName,     
                 lastName: this.props.bride.lastName,     
@@ -132,18 +130,14 @@ class Edit extends React.Component {
                 /> <br />
  
           
-             <button className="form-button">
-                <div onClick={this.onSubmit}>
-                    UPDATE CLIENT
-                </div>
-              </button>
-               
+            <button className="form-button" onClick={this.onSubmit}>
+                UPDATE CLIENT
+            </button>
             </form>
 
-            <div>
-                <PhotoUploader />
-            </div>
-            
+            <PhotoUploader />
+
+
         </section>
     )}
 }

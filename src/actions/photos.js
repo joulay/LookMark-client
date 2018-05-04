@@ -17,8 +17,10 @@ export const createNewPhotoSuccess = photo => ({
 
 export const getPhotos = () => dispatch => {
     const authToken = localStorage.getItem('authToken');
+    if (!store.getState().bride.brides.length) {
+        return false;
+    } 
     const brideId = store.getState().bride.currentBride.id;
-  
       fetch(`${API_BASE_URL}/photos/${brideId}`, {
           method: 'GET',
           headers: {

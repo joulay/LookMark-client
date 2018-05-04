@@ -27,7 +27,6 @@ class ClientDetail extends React.Component {
             notes = this.props.bride.notes;
             photos = this.props.bride.photos;
     
-            console.log(this.props.bride)
 
             
             
@@ -51,7 +50,7 @@ class ClientDetail extends React.Component {
                 {photos && photos.map((value, index) => {
                 return (
                      <li key={index} className="photo-list">
-                         <img className="photo-image" src={`http://localhost:8080/${value.photo}`} /> 
+                         <img className="photo-image" src={`http://localhost:8080/${value.photo}`} alt="client" /> 
                      </li>
                 )
             })}

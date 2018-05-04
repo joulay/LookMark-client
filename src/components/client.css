@@ -33,6 +33,7 @@
   vertical-align:middle;
   font-weight: 300;
   font-size: 12px;
+  margin-top: 1.6rem;
 }
 
 .date {
@@ -56,17 +57,31 @@
 }
 
 .bottom {
-  padding-top: 33em;
+  margin-bottom: 2rem;
 }
 
 .home-nav {
   text-align: left;
+  padding: 2rem 0 0 2rem;
 }
 
 .photo-image {
   max-width: 100%;
+
 }
 
 li {
   list-style-type: none;
+  max-width: 400px;
+  margin: auto;
+}
+
+.container {
+  margin: 2rem auto;
+
+}
+
+.container form {
+  text-align: center;
+
 }
