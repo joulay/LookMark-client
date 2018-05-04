@@ -51,7 +51,7 @@ class ClientDetail extends React.Component {
                 {photos && photos.map((value, index) => {
                 return (
                      <li key={index} className="photo-list">
-                         <img className="photo-image" src={`${value.photo}`} /> 
+                         <img className="photo-image" src={`http://localhost:8080/${value.photo}`} /> 
                      </li>
                 )
             })}

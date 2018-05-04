@@ -62,3 +62,11 @@
 .home-nav {
   text-align: left;
 }
+
+.photo-image {
+  max-width: 100%;
+}
+
+li {
+  list-style-type: none;
+}
