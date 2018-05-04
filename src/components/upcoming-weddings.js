@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { getBrides } from '../actions/bride';
 import LogOut from './log-out';
 import './upcoming-wedding.css';
-import background from '../decor/darkblackmarble.jpg';
+import background from '../decor/peony.jpg';
 import moment from 'moment';
 
 

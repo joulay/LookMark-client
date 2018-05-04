@@ -27,7 +27,7 @@
     margin-right: auto;
     width: 90%;
     text-align: center;
-    background:black;
+    background:white;
     border-radius: 10px;
 }
 
@@ -78,7 +78,7 @@ td {
     vertical-align:middle;
     font-weight: 300;
     font-size: 13px;
-    color:#E0E0E0;
+    color:#99A3A4;
     /* border-bottom: solid 1px rgba(255,255,255,0.1); */
 }
 
