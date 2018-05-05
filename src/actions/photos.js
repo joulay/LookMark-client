@@ -1,6 +1,6 @@
-import { API_BASE_URL } from '../config';
+// import { API_BASE_URL } from '../config';
 import store from '../store';
-// const API_BASE_URL = 'https://lookmarkapp.herokuapp.com/api'
+const API_BASE_URL = 'https://lookmarkapp.herokuapp.com/api'
 
 
 export const GET_PHOTO_SUCCESS = 'GET_PHOTO_SUCCESS';

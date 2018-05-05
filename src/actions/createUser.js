@@ -1,6 +1,6 @@
-import { API_BASE_URL } from '../config';
+// import { API_BASE_URL } from '../config';
 import {SubmissionError} from 'redux-form';
-// const API_BASE_URL = 'https://lookmarkapp.herokuapp.com/api'
+const API_BASE_URL = 'https://lookmarkapp.herokuapp.com/api'
 
 
 
