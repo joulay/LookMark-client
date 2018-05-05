@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { getPhotos, postPhoto } from '../actions/photos'
 import FormData from 'form-data';
 import { PHOTO_BASE_URL } from '../config.js';
-
+// const PHOTO_BASE_URL = 'https://lookmarkapp.herokuapp.com/photos'
 
 class PhotoUploader extends React.Component {
     componentDidMount(){

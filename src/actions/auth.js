@@ -4,6 +4,7 @@ import {SubmissionError} from 'redux-form';
 
 import {API_BASE_URL} from '../config';
 import {saveAuthToken, clearAuthToken} from '../local-storage';
+const API2_BASE_URL = 'https://lookmarkapp.herokuapp.com/api'
 
 export const SET_AUTH_TOKEN = 'SET_AUTH_TOKEN';
 export const setAuthToken = authToken => ({
@@ -43,7 +44,7 @@ const storeAuthInfo = (authToken, dispatch) => {
 export const login = (username, password) => dispatch => {
     dispatch(authRequest());
 
-    return fetch(`${API_BASE_URL}/login`, {
+    return fetch(`${API2_BASE_URL}/login`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
