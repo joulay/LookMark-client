@@ -2,8 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { getPhotos, postPhoto } from '../actions/photos'
 import FormData from 'form-data';
-import { PHOTO_BASE_URL } from '../config.js';
-// const PHOTO_BASE_URL = 'https://lookmarkapp.herokuapp.com/photos'
+
 
 class PhotoUploader extends React.Component {
     componentDidMount(){
@@ -19,10 +18,15 @@ class PhotoUploader extends React.Component {
 
 
     render() {
-       const allPhotos = this.props.photos.map((value, index) => {
+        if (!this.props.bride) {
+            return null;
+        }
+       const allPhotos = this.props.bride.photos.map((value, index) => {
+      
+           console.log(value.photo);
            return (
                 <li key={index} className="photo-list">
-                    <img className="photo-image" src={`${PHOTO_BASE_URL}${value}`} alt="client" /> 
+                    <img className="photo-image" src={`${value.photo}`} alt="client" /> 
                 </li>
            )
        })

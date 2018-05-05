@@ -1,6 +1,13 @@
 // import { API_BASE_URL } from '../config';
 import { loadAuthToken } from '../local-storage';
-const API_BASE_URL = 'https://lookmarkapp.herokuapp.com/api'
+import { API_BASE_URL } from '../config';
+
+let API2_BASE_URL = 'https://lookmarkapp.herokuapp.com/api'
+
+const env = process.env.NODE_ENV || 'development';
+if (env === 'development') {
+    API2_BASE_URL = API_BASE_URL;
+}
 
 
 export const CREATE_BRIDE_REQUEST = 'CREATE_BRIDE_REQUEST'

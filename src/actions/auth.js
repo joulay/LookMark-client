@@ -2,10 +2,16 @@
 import jwtDecode from 'jwt-decode';
 import {SubmissionError} from 'redux-form';
 
-import {API_BASE_URL} from '../config';
-import {saveAuthToken, clearAuthToken} from '../local-storage';
-const API2_BASE_URL = 'https://lookmarkapp.herokuapp.com/api'
 
+import {saveAuthToken, clearAuthToken} from '../local-storage';
+import { API_BASE_URL } from '../config';
+
+let API2_BASE_URL = 'https://lookmarkapp.herokuapp.com/api'
+
+const env = process.env.NODE_ENV || 'development';
+if (env === 'development') {
+    API2_BASE_URL = API_BASE_URL;
+}
 export const SET_AUTH_TOKEN = 'SET_AUTH_TOKEN';
 export const setAuthToken = authToken => ({
     type: SET_AUTH_TOKEN,
