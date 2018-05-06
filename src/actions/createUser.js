@@ -1,8 +1,13 @@
-// import { API_BASE_URL } from '../config';
+
 import {SubmissionError} from 'redux-form';
-const API_BASE_URL = 'https://lookmarkapp.herokuapp.com/api'
+import { API_BASE_URL } from '../config';
 
+let API2_BASE_URL = 'https://lookmarkapp.herokuapp.com/api'
 
+const env = process.env.NODE_ENV || 'development';
+if (env === 'development') {
+    API2_BASE_URL = API_BASE_URL;
+}
 
 export const CREATE_NEW_USER = 'CREATE_NEW_USER'
 export const createNewUser = (user) => ({
