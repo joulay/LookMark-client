@@ -71,8 +71,7 @@ class Edit extends React.Component {
         this.setState({notes: e.target.value})});
 
     render() { 
-        // console.log('the id: ' + JSON.stringify(this.props.location.state));
-        // console.log(this.props.location.state['currentBrideId']);
+  
     return (
         <section >
             <div className="home-nav">

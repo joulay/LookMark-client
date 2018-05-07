@@ -43,31 +43,3 @@ export const newUser = user => dispatch => {
     });
 };
 
-//     return fetch(`${API_BASE_URL}/api/users`, {
-//         method: 'POST',
-//         headers: {
-//             'Accept': 'application/json',
-//             'Content-Type': 'application/json'
-//         },
-//         body: JSON.stringify({
-//             newUser
-//         })
-//     })
-//         .then(res => res.json())
-//         .catch(err => console.log(err))
-
-// export const newUser = (fullname, email, username, password) => {
-//     return (dispatch) => {
-//         fetch(`${API_BASE_URL}/users`, {
-//             method: 'POST',
-//             headers: {
-//                 'Accept': 'application/json',
-//                 'Content-Type': 'application/json'
-//             },
-//             body: JSON.stringify(fullname, email, username, password)
-//         })
-//             .then(res => res.json())
-//             .then(json => console.log(json))
-//             .catch(error => console.log(error))
-//     }
-// }

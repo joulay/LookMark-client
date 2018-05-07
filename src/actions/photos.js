@@ -57,7 +57,6 @@ export const postPhoto = photo => dispatch => {
       return res.json();
     })
     .then(response => {
-      console.log(response);
       return dispatch(createNewPhotoSuccess(response.photo));
       
     });
