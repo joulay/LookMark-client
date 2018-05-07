@@ -22,11 +22,17 @@ class PhotoUploader extends React.Component {
             return null;
         }
        const allPhotos = this.props.bride.photos.map((value, index) => {
-      
            console.log(value.photo);
            return (
                 <li key={index} className="photo-list">
                     <img className="photo-image" src={`${value.photo}`} alt="client" /> 
+                </li>
+           )
+       })
+       const uploadPhoto = this.props.photos.map((value, index) => {
+           return (
+                <li key={index} className="photo-list">
+                    <img className="photo-image" src={`${value}`} alt="client" /> 
                 </li>
            )
        })
@@ -39,6 +45,7 @@ class PhotoUploader extends React.Component {
                         
                     <button className="edit-button" type="submit">UPLOAD</button>
                 </form>
+                {uploadPhoto ? uploadPhoto : ''}
                 {allPhotos ? allPhotos : ''}
             </div>
 

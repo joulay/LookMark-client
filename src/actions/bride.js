@@ -1,7 +1,7 @@
 // import { API_BASE_URL } from '../config';
 import { loadAuthToken } from '../local-storage';
 import { API_BASE_URL } from '../config';
-console.log(API_BASE_URL);
+
 
 export const CREATE_BRIDE_REQUEST = 'CREATE_BRIDE_REQUEST';
 export const createBrideRequest = bride => ({

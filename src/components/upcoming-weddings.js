@@ -20,9 +20,16 @@ const sectionStyle = {
 
 class UpcomingWeddings extends React.Component {
     componentDidMount() {
-        this.props.dispatch(getBrides())
 
+        setTimeout(() => this.props.dispatch(getBrides()), 1000)
+           
     }
+    // componentDidUpdate() {
+    //     console.log(this.props.brides)
+    //     if(this.props.brides.length <= 0) {
+    //         this.props.dispatch(getBrides())
+    //     }    
+    // }
     render() {
         let brides;
         if (this.props.brides.length) {
