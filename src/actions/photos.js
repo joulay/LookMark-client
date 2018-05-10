@@ -13,6 +13,11 @@ export const createNewPhotoSuccess = photo => ({
   photo
 });
 
+export const CREATE_NEW_PHOTO_REQUEST = 'CREATE_NEW_PHOTO_REQUEST';
+export const createNewPhotoRequest = () => ({
+  type: CREATE_NEW_PHOTO_REQUEST
+});
+
 export const getPhotos = () => dispatch => {
   const authToken = localStorage.getItem('authToken');
   if (!store.getState().bride.brides.length) {
@@ -43,6 +48,7 @@ export const postPhoto = photo => dispatch => {
   const authToken = localStorage.getItem('authToken');
   const brideId = store.getState().bride.currentBride.id;
 
+  dispatch(createNewPhotoRequest())
   fetch(`${API_BASE_URL}/photos/${brideId}`, {
     method: 'POST',
     headers: {
@@ -60,4 +66,5 @@ export const postPhoto = photo => dispatch => {
       return dispatch(createNewPhotoSuccess(response.photo));
       
     });
+  
 };

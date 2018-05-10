@@ -21,6 +21,7 @@ class PhotoUploader extends React.Component {
         if (!this.props.bride) {
             return null;
         }
+        
        const allPhotos = this.props.bride.photos.map((value, index) => {
            return (
                 <li key={index} className="photo-list">
@@ -44,6 +45,7 @@ class PhotoUploader extends React.Component {
                         
                     <button className="edit-button" type="submit">UPLOAD</button>
                 </form>
+                {this.props.loading && <p className="loading">loading...</p>}
                 {uploadPhoto ? uploadPhoto : ''}
                 {allPhotos ? allPhotos : ''}
             </div>
@@ -56,7 +58,8 @@ class PhotoUploader extends React.Component {
 
 const mapStateToProps = state => ({
     bride: state.bride.currentBride,
-    photos: state.photo.photos
+    photos: state.photo.photos,
+    loading: state.photo.loading
 })  
 
 

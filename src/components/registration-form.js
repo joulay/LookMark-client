@@ -1,9 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { required } from './validators';
 import { Field, reduxForm } from 'redux-form';
+import { connect } from 'react-redux';
 import  { newUser } from '../actions/createUser';
 import Input from './input';
+import {login } from '../actions/auth';
 import background from '../decor/blackmarble.jpg';
 import './registration-form.css';
 
@@ -15,29 +17,34 @@ const sectionStyle = {
   };
 
 export class RegistrationForm extends React.Component{
-    constructor(props) {
-        super(props) 
+    // constructor(props) {
+    //     super(props) 
 
-        this.state={
-            msg:""
-        }
-    }
+    //     this.state={
+    //         msg:""
+    //     }
+    // }
+    
 
     onSubmit(values) {    
         const {fullName, email, username, password} = values;
         const user = {fullName, email, username, password};
         return this.props
             .dispatch(newUser(user))
-            .then(this.setState({msg: 'Thank you for registering. Please log in'})
-            )}
+            .then(() => this.props.dispatch(login(username, password))) }
+            // .then(this.setState({msg: 'Thank you for registering. Please log in'})
+            // )}
 
     render() {
+        if(this.props.loggedIn) {
+            return <Redirect to="/home" />;
+        }
         
     return (
         <section style={ sectionStyle }>
             <div className="register-page">
                 <Link className="back-link" to="/signup">Back</Link>
-                <p>{this.state.msg ? this.state.msg : ''}</p>
+                {/* <p>{this.state.msg ? this.state.msg : ''}</p> */}
                 <form 
                     className="form" 
                     onSubmit={this.props.handleSubmit(values =>
@@ -89,8 +96,13 @@ export class RegistrationForm extends React.Component{
 
 
 
+const mapStateToProps = state => ({
+    loggedIn: state.auth.currentUser !== null
+})  
+const connectedRegistrationForm = connect(mapStateToProps)(RegistrationForm);
+
 
 export default reduxForm({
     form: 'registerUser'
-})(RegistrationForm);  
+})(connectedRegistrationForm);  
 
