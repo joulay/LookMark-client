@@ -49,20 +49,15 @@ class PhotoUploader extends React.Component {
                 {uploadPhoto ? uploadPhoto : ''}
                 {allPhotos ? allPhotos : ''}
             </div>
-
-
         )
     }
 }    
-
 
 const mapStateToProps = state => ({
     bride: state.bride.currentBride,
     photos: state.photo.photos,
     loading: state.photo.loading
 })  
-
-
 
 export default connect(mapStateToProps)(PhotoUploader);
     

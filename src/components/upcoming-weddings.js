@@ -14,15 +14,11 @@ const sectionStyle = {
     height: "100VH",
     backgroundImage: `url(${background})`
   };
-  //background size-pixel? percent?
-  //backgroundSixeCover fill greater of height than width
 
 
 class UpcomingWeddings extends React.Component {
     componentDidMount() {
-
-        setTimeout(() => this.props.dispatch(getBrides()), 1000)
-           
+        setTimeout(() => this.props.dispatch(getBrides()), 1000)       
     }
 
     render() {
@@ -36,7 +32,7 @@ class UpcomingWeddings extends React.Component {
                 <td><Link className="detail-link" to= {`/brides/${bride.id}`}>DETAILS</Link></td>
             </tr>
         ))
-        }
+    }
     return (
         <section style={ sectionStyle }>
             <div className="button-container">
@@ -70,10 +66,3 @@ const mapStateToProps = (state) => ({
 export default connect(mapStateToProps)(UpcomingWeddings);
 
 
-
-// let weddingDate = {moment({bride.weddingDate}).format('MMM do YY')}
-
-// to= {{ 
-    //     pathname: `/brides/${bride.id}`,
-    //     state: { currentBrideId: bride.id },
-    // }}

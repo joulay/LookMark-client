@@ -19,7 +19,6 @@ export class LoginForm extends React.Component {
             );
         }
 
-
         return (    
             <div>
                 <form

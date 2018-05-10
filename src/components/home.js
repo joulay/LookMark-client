@@ -15,8 +15,6 @@ function Home(props) {
     return (
       <Router>
         <div className="Home">
-        {/*<Sidebar /> for hamburger*/}
-
           <main>
             <Switch>
               <Redirect exact from="/" to="/signup" />
@@ -33,7 +31,6 @@ function Home(props) {
         </div>
       </Router>
     );
-  
 }
 
 

@@ -14,12 +14,10 @@ const sectionStyle = {
     backgroundImage: `url(${background})`
   };
 
-
 function SignIn(props) {
     if(props.loggedIn) {
         return <Redirect to="/home" />;
     }
-
 
     return (
         <section style={ sectionStyle }>
@@ -33,8 +31,7 @@ function SignIn(props) {
         </section>
     )
 }
-
-        
+    
 const mapStateToProps = state => ({
     loggedIn: state.auth.currentUser !== null
 })  

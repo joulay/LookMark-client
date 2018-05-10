@@ -7,5 +7,4 @@ describe('<RegistrationForm />', () => {
     it('should render without crashing', () => {
         shallow(<RegistrationForm handleSubmit={() => {}} />);
     });
-
 });

@@ -7,5 +7,4 @@ describe('<LoginForm />', () => {
     it('should render without crashing', () => {
         shallow(<LoginForm handleSubmit={() => {}} />);
     });
-
 });
