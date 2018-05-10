@@ -25,19 +25,15 @@ class ClientDetail extends React.Component {
             addy = this.props.bride.location;
             email = this.props.bride.email;
             notes = this.props.bride.notes;
-            photos = this.props.bride.photos;
-    
-
-            
-            
+            photos = this.props.bride.photos;     
     }
+
     return (  
     <div className="client-detail">
         <div className="home-nav">
             <Link to={`/home`}><span uk-icon="icon: arrow-left; ratio: 1.5"></span></Link> <br />
         </div>
       
-
     <div className="card">
         <div className="content">
             <div className="deets">
@@ -53,14 +49,9 @@ class ClientDetail extends React.Component {
                          <img className="photo-image" src={`${value.photo}`} alt="client" /> 
                      </li>
                 )
-            })}
-
-
-                
+            })}     
             </div>
         </div>
-
-
     </div>
 
     <div className="bottom">    
@@ -70,9 +61,8 @@ class ClientDetail extends React.Component {
             }}> 
             <button className="edit-button">EDIT</button>
         </Link>
-
     </div>
-
+    
     </div>
         )       
     }

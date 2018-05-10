@@ -3,19 +3,11 @@ import { connect } from 'react-redux';
 import { getBride, updateBride } from '../actions/bride';
 import { Link } from 'react-router-dom';
 import PhotoUploader from './photo-upload';
-// import background from '../decor/darkblackmarble.jpg';
 import './edit.css';
-
-// const sectionStyle = {
-//     width: "100%",
-//     height: "100VH",
-//     backgroundImage: `url(${background})`
-//   };
 
 class Edit extends React.Component {
     constructor(props) {
         super(props)
-    
         this.state = {
             firstName: '',
             lastName: '',
@@ -41,18 +33,13 @@ class Edit extends React.Component {
                 id: this.props.bride.id
             }); 
         }, 500);
-        // this.props.dispatch(getPhotos()) 
     }
 
     onSubmit = (e) => { 
         e.preventDefault();
         const {firstName, lastName, email, phone, weddingDate, location, id, notes} = this.state;
         const client = {firstName, lastName, email, phone, weddingDate, location, id, notes};
-       //pass photo& id 
-
-            // this.props.dispatch(postPhoto(this.props.location.state.currentBrideId));
             this.props.dispatch(updateBride(client));
-            
     }
 
     firstNameChange=(e => {
@@ -138,7 +125,6 @@ class Edit extends React.Component {
 
             <PhotoUploader />
 
-
         </section>
     )}
 }
@@ -150,9 +136,3 @@ const mapStateToProps = (state, props) => ({
 
 
 export default connect(mapStateToProps)(Edit);
-
-//connects state to component, provides dispatch keys to same object
-//this.props = keys inside obj, which repr components 
-//dispatch keys = actions 
-
-//mapStateToProps = data better known as STATE 

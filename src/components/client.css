@@ -1,36 +1,21 @@
 .form {
     max-width: 265px;
     margin-top:2rem;
-  }
+}
   
-
-
 .client-detail {
     text-align: center;
-  }
-
-/* .card {
-    position: absolute;
-    top: 25%;
-    left: 50%;
-    width: 300px;
-    height: 300px;
-    margin: -150px;
-    float: left;
-    perspective: 500px;
-  } */
+}
 
 .back-button{
   color: grey;
-  
 }
 
 .content {
   position: absolute;
   width: 100%;
   height: 100%;
-  /* box-shadow: 0 0 15px rgba(0,0,0,0.1); */
-  }
+}
 
 .deets {
   padding: 15px;
@@ -61,7 +46,6 @@
   width: 100%
 }
 
-
 .bottom {
   margin-bottom: 2rem;
 }
@@ -73,7 +57,6 @@
 
 .photo-image {
   max-width: 100%;
-
 }
 
 li {
