@@ -22,7 +22,6 @@ function SignIn(props) {
     return (
         <section style={ sectionStyle }>
             <div className="sign-in">
-                
                 <img id="logo" src={logo} alt="lookmark logo" />
                 <LoginForm />
                 <p></p>
