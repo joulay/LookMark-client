@@ -23,7 +23,7 @@ function Home(props) {
               <Route exact path="/signup" component={SignIn} />
               <Route exact path="/register" component={RegistrationForm} />
               <Route exact path="/home" component={UpcomingWeddings} />
-              <Route exact path="/newclient" component={Client} />
+              <Route exact path="/client" component={Client} />
               <Route exact path="/brides/:id" component={ClientDetail} />
               <Route exact path="/edit/:id" component={Edit} />
               <Route exact path="/photos" component={Photos} />
@@ -36,7 +36,7 @@ function Home(props) {
   
 }
 
-//POLISH UP change to client, not newclient
+
 
 export default connect()(Home);
 

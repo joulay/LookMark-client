@@ -40,7 +40,7 @@ class UpcomingWeddings extends React.Component {
     return (
         <section style={ sectionStyle }>
             <div className="button-container">
-                <Link to="/newclient"> 
+                <Link to="/client"> 
                     <button className="new-client-button">+ CLIENT</button>
                 </Link>
                 <LogOut />
