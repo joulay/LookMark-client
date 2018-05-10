@@ -64,7 +64,31 @@ export const postPhoto = photo => dispatch => {
     })
     .then(response => {
       return dispatch(createNewPhotoSuccess(response.photo));
-      
     });
-  
+};
+
+export const deletePhoto = (id) => dispatch => {
+  const authToken = localStorage.getItem('authToken');
+  if (!store.getState().bride.brides.length) {
+    return false;
+  }
+  const brideId = store.getState().bride.currentBride.id;
+  fetch(`${API_BASE_URL}/photos/${brideId}`, {
+    method: 'DELETE',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${authToken}`
+    }
+  })
+    .then(res => {
+      if (!res.ok) {
+        return Promise.reject(res.statusText);
+      }
+      return res.json();
+    })
+    .then(photos => {
+      return dispatch(getPhotoSuccess(photos));
+    })
+    .catch(err => console.log(err));
 };

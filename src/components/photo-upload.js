@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { getPhotos, postPhoto } from '../actions/photos'
+import { getPhotos, postPhoto, deletePhoto } from '../actions/photos'
 import FormData from 'form-data';
 
 
@@ -15,7 +15,9 @@ class PhotoUploader extends React.Component {
         this.props.dispatch(postPhoto(photo));
         event.target.photo.value = '';
     }
-
+    onClick() {
+        this.props.dispatch(deletePhoto(id));
+    }
 
     render() {
         if (!this.props.bride) {
@@ -25,6 +27,7 @@ class PhotoUploader extends React.Component {
        const allPhotos = this.props.bride.photos.map((value, index) => {
            return (
                 <li key={index} className="photo-list">
+                <button className="delete" onClick={()=>this.onClick(value)}>X</button>
                     <img className="photo-image" src={`${value.photo}`} alt="client" /> 
                 </li>
            )
