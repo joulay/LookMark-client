@@ -18,6 +18,12 @@ export const createNewPhotoRequest = () => ({
   type: CREATE_NEW_PHOTO_REQUEST
 });
 
+export const DELETE_PHOTO_SUCCESS = 'DELETE_PHOTO_SUCCESS'; 
+export const deletePhotoSuccess = photo => ({
+  type: DELETE_PHOTO_SUCCESS,
+  photo
+});
+
 export const getPhotos = () => dispatch => {
   const authToken = localStorage.getItem('authToken');
   if (!store.getState().bride.brides.length) {
@@ -67,11 +73,9 @@ export const postPhoto = photo => dispatch => {
     });
 };
 
-export const deletePhoto = (id) => dispatch => {
+export const deletePhoto = (photo) => dispatch => {
   const authToken = localStorage.getItem('authToken');
-  if (!store.getState().bride.brides.length) {
-    return false;
-  }
+  
   const brideId = store.getState().bride.currentBride.id;
   fetch(`${API_BASE_URL}/photos/${brideId}`, {
     method: 'DELETE',
@@ -79,16 +83,18 @@ export const deletePhoto = (id) => dispatch => {
       Accept: 'application/json',
       'Content-Type': 'application/json',
       Authorization: `Bearer ${authToken}`
-    }
+    },
+    body: JSON.stringify(photo)
   })
     .then(res => {
+      console.log(res, 'aaaaaaaaaaaaaaaa');
       if (!res.ok) {
         return Promise.reject(res.statusText);
       }
-      return res.json();
+      return res;
     })
-    .then(photos => {
-      return dispatch(getPhotoSuccess(photos));
+    .then( () => {
+      return dispatch(deletePhotoSuccess(photo));
     })
     .catch(err => console.log(err));
 };

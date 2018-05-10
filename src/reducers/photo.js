@@ -1,4 +1,4 @@
-import { GET_PHOTO_SUCCESS, CREATE_NEW_PHOTO_SUCCESS, CREATE_NEW_PHOTO_REQUEST } from '../actions/photos';
+import { GET_PHOTO_SUCCESS, CREATE_NEW_PHOTO_SUCCESS, CREATE_NEW_PHOTO_REQUEST, DELETE_PHOTO_SUCCESS } from '../actions/photos';
 
 const initialState = {
     photos: [],
@@ -22,6 +22,14 @@ export default (state = initialState, action) => {
             loading: true
         })
     }
+    if (action.type === DELETE_PHOTO_SUCCESS) {
+        console.log(action);
+        console.log(state.photos);
+        return Object.assign({}, state, {
+            photos: state.photos.filter(photo => photo.photo !== action.photo.photo)
+        })
+    }
+
     return state;     
 }
 

@@ -15,8 +15,9 @@ class PhotoUploader extends React.Component {
         this.props.dispatch(postPhoto(photo));
         event.target.photo.value = '';
     }
-    onClick() {
-        this.props.dispatch(deletePhoto(id));
+    onClick(value) {
+        console.log('delete button working', value);
+        this.props.dispatch(deletePhoto(value));
     }
 
     render() {

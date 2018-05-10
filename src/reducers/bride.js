@@ -12,6 +12,9 @@ UPDATE_BRIDE_REQUEST,
 UPDATE_BRIDE_SUCCESS,
 UPDATE_BRIDE_ERROR
 } from '../actions/bride';
+import{
+DELETE_PHOTO_SUCCESS
+} from '../actions/photos';
 
 
 const initialState = {
@@ -43,7 +46,15 @@ export const brideReducer = (state = initialState, action) => {
             loading: true
         })
     }
+    else if(action.type === DELETE_PHOTO_SUCCESS) {
+        return Object.assign({}, state, {
+            currentBride: Object.assign({}, state.currentBride, {
+                photos: state.currentBride.photos.filter(photo => photo.photo !== action.photo.photo)
+            })
+        })
+    }
     else if(action.type === GET_BRIDE_SUCCESS){
+        console.log(action);
         return Object.assign({}, state,{
             currentBride: action.bride,
             loading: false
