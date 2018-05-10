@@ -47,7 +47,7 @@ export const getPhotos = () => dispatch => {
     .then(photos => {
       return dispatch(getPhotoSuccess(photos));
     })
-    .catch(err => console.log(err));
+    .catch(err => (err));
 };
 
 export const postPhoto = photo => dispatch => {
@@ -87,7 +87,6 @@ export const deletePhoto = (photo) => dispatch => {
     body: JSON.stringify(photo)
   })
     .then(res => {
-      console.log(res, 'aaaaaaaaaaaaaaaa');
       if (!res.ok) {
         return Promise.reject(res.statusText);
       }
@@ -96,5 +95,5 @@ export const deletePhoto = (photo) => dispatch => {
     .then( () => {
       return dispatch(deletePhotoSuccess(photo));
     })
-    .catch(err => console.log(err));
+    .catch(err => (err));
 };

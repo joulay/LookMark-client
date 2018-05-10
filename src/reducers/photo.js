@@ -23,8 +23,6 @@ export default (state = initialState, action) => {
         })
     }
     if (action.type === DELETE_PHOTO_SUCCESS) {
-        console.log(action);
-        console.log(state.photos);
         return Object.assign({}, state, {
             photos: state.photos.filter(photo => photo.photo !== action.photo.photo)
         })

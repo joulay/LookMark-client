@@ -16,7 +16,6 @@ class PhotoUploader extends React.Component {
         event.target.photo.value = '';
     }
     onClick(value) {
-        console.log('delete button working', value);
         this.props.dispatch(deletePhoto(value));
     }
 
@@ -36,6 +35,7 @@ class PhotoUploader extends React.Component {
        const uploadPhoto = this.props.photos.map((value, index) => {
            return (
                 <li key={index} className="photo-list">
+                
                     <img className="photo-image" src={`${value}`} alt="client" /> 
                 </li>
            )

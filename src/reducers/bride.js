@@ -54,7 +54,6 @@ export const brideReducer = (state = initialState, action) => {
         })
     }
     else if(action.type === GET_BRIDE_SUCCESS){
-        console.log(action);
         return Object.assign({}, state,{
             currentBride: action.bride,
             loading: false
