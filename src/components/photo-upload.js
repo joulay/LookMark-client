@@ -27,7 +27,7 @@ class PhotoUploader extends React.Component {
        const allPhotos = this.props.bride.photos.map((value, index) => {
            return (
                 <li key={index} className="photo-list">
-                <button className="delete" onClick={()=>this.onClick(value)}>X</button>
+                <button className="delete-button" onClick={()=>this.onClick(value)}>X</button>
                     <img className="photo-image" src={`${value.photo}`} alt="client" /> 
                 </li>
            )
