@@ -55,7 +55,7 @@ export class NewClientForm extends React.Component {
           
                 <Field 
                     component={Input} 
-                    type="number" 
+                    type="text" 
                     name="phone" 
                     placeholder="PHONE"
                 /> <br />
