@@ -26,6 +26,16 @@ function SignIn(props) {
                 <LoginForm />
                 <p></p>
                 <Link className="create-link" to="/register">Create an account</Link>
+                <br/>
+                <div className="tooltip">
+                    <span uk-icon="info"></span>
+                    <br/>
+                    <span className="tooltipText">
+                    DEMO ACCOUNT<br/> 
+                    USER: demo <br/>
+                    PASSWORD: password</span>
+                </div>
+                
             </div>              
         </section>
     )
