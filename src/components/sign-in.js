@@ -31,9 +31,9 @@ function SignIn(props) {
                     <span uk-icon="info"></span>
                     <br/>
                     <span className="tooltipText">
-                    DEMO ACCOUNT<br/> 
-                    USER: demo <br/>
-                    PASSWORD: password</span>
+                    An app for makeup artist, by a makeup artist <br/>
+                    to keep clients info and photos in one place<br/>
+                    </span>
                 </div>
                 
             </div>              
