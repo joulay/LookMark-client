@@ -32,7 +32,7 @@ function SignIn(props) {
                     <br/>
                     <span className="tooltipText">
                     An app for makeup artist, by a makeup artist <br/>
-                    to streamline client info and photos<br/>
+                    to maintain client info and photos in one place<br/>
                     </span>
                 </div>
                 
