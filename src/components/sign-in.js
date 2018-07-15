@@ -9,7 +9,7 @@ import LoginForm from './login-form';
 
 const sectionStyle = {
     backgroundSize: "100% 100%",
-    height: "100VH",
+    height: "100vh",
     backgroundRepeat: "no-repeat",
     backgroundImage: `url(${background})`
   };

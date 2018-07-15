@@ -31,3 +31,13 @@ a {
 .tooltip:hover .tooltipText {
     visibility: visible;
 }
+
+.tooltipText {
+    font-size: 10px;
+}
+
+@media all and (max-width: 600px) {   
+    .Home section {     
+        height: 100% !important; 
+    } 
+}
