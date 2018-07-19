@@ -28,7 +28,7 @@ function SignIn(props) {
                 <Link className="create-link" to="/register">Create an account</Link>
                 <br/>
                 <div className="tooltip">
-                    <span uk-icon="info"></span>
+                    <span uk-icon="info" className="i"></span>
                     <br/>
                     <span className="tooltipText">
                     An app for makeup artist, by a makeup artist

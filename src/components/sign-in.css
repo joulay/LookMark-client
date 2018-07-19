@@ -18,6 +18,9 @@ a {
 
 }
 
+.i {
+    fill: white;
+}
 
 .tooltip {
     margin: 15px;
@@ -67,4 +70,8 @@ a {
     .login-input {
         margin-top: -3rem;
     }
+}
+
+.form-error {
+    color:#E3F2FD;
 }
