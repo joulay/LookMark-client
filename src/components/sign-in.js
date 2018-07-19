@@ -31,9 +31,9 @@ function SignIn(props) {
                     <span uk-icon="info"></span>
                     <br/>
                     <span className="tooltipText">
-                    An app for makeup artist, by a makeup artist <br/>
-                    to maintain client info and photos in one place<br/>
-                    </span>
+                    An app for makeup artist, by a makeup artist
+                    to maintain client info and photos in one place</span>
+                    
                 </div>
                 
             </div>              

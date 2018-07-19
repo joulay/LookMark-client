@@ -26,6 +26,7 @@ a {
     color: #EAF2F8;
     text-align: center;
     z-index:1;
+    text-transform: uppercase;
 }
 
 .tooltip:hover .tooltipText {
