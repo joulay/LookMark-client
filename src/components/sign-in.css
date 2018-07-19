@@ -20,6 +20,9 @@ a {
 
 .i {
     fill: white;
+    stroke: none;
+}
+.i circle {
     stroke: white;
 }
 
