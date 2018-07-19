@@ -15,6 +15,7 @@ a {
 #logo {
     max-width: 100%;
     margin-top: -3rem;
+
 }
 
 
@@ -41,4 +42,29 @@ a {
     .Home section {     
         height: 100% !important; 
     } 
+}
+
+@media only screen and (max-height : 828px) {
+    #logo {
+        margin-top: -5rem;
+    }
+    .login-input {
+        margin-top: -2rem;
+    }
+    .tooltip {
+        margin: 3px;
+    }
+}
+
+
+@media only screen and (max-height : 740px) {
+    #logo {
+        margin-top: -5.5rem;
+    }
+    .tooltip {
+        margin: 5px;
+    }
+    .login-input {
+        margin-top: -2rem;
+    }
 }
