@@ -59,12 +59,12 @@ a {
 
 @media only screen and (max-height : 740px) {
     #logo {
-        margin-top: -5.5rem;
+        margin-top: -6em;
     }
     .tooltip {
         margin: 5px;
     }
     .login-input {
-        margin-top: -2rem;
+        margin-top: -3rem;
     }
 }
