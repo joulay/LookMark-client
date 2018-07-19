@@ -80,3 +80,12 @@ a {
     }
 }
  */
+
+ @media only screen and (max-width: 320px) and (max-height: 568px) {
+     #logo {
+         margin-top: -5rem;
+     }
+     .login-input {
+         margin-top: -1rem;
+     }
+ }
