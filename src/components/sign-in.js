@@ -11,7 +11,9 @@ const sectionStyle = {
     backgroundSize: "100% 100%",
     height: "100vh",
     backgroundRepeat: "no-repeat",
-    backgroundImage: `url(${background})`
+    backgroundImage: `
+     url(${background})`
+    // `url(${background})`
   };
 
 function SignIn(props) {
