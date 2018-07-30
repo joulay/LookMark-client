@@ -11,9 +11,7 @@ const sectionStyle = {
     backgroundSize: "100% 100%",
     height: "100vh",
     backgroundRepeat: "no-repeat",
-    backgroundImage: `
-     url(${background})`
-    // `url(${background})`
+    backgroundImage: `url(${background})`
   };
 
 function SignIn(props) {
@@ -29,14 +27,6 @@ function SignIn(props) {
                 <p></p>
                 <Link className="create-link" to="/register">Create an account</Link>
                 <br/>
-                {/* <div className="tooltip">
-                    <span uk-icon="info" className="i"></span>
-                    <br/>
-                    <span className="tooltipText">
-                    An app for makeup artist, by a makeup artist
-                    to maintain client info and photos in one place</span>
-                    
-                </div> */}
                 
             </div>              
         </section>
