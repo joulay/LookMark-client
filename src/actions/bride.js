@@ -72,11 +72,6 @@ export const updateBrideError = error => ({
   error
 });
 
-// export const DELETE_BRIDE_REQUEST = 'DELETE_BRIDE_REQUEST'
-// export const deleteBrideRequest = (id) => ({
-//     type:'DELETE_BRIDE_REQUEST',
-//     id
-// })
 
 export const newBride = user => dispatch => {
   const authToken = loadAuthToken();
@@ -148,19 +143,3 @@ export const updateBride = user => dispatch => {
     });
 };
 
-// export const deleteBride = user => dispatch => {
-//     const authToken = loadAuthToken();
-//     return fetch(`${API_BASE_URL}/brides/${user.id}`, {
-//         method: 'DELETE',
-//         headers: {
-//             'Content-Type': 'application/json',
-//             'Authorization' : `Bearer ${authToken}`
-//         },
-//     })
-//     .then(res => {
-//         if (!res.ok) {
-//           return Promise.reject(res.status);
-//         }
-//         return dispatch(deleteBrideRequest());
-//       });
-//     };
