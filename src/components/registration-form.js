@@ -17,14 +17,6 @@ const sectionStyle = {
   };
 
 export class RegistrationForm extends React.Component{
-    // constructor(props) {
-    //     super(props) 
-
-    //     this.state={
-    //         msg:""
-    //     }
-    // }
-    
 
     onSubmit(values) {    
         const {fullName, email, username, password} = values;
@@ -32,8 +24,6 @@ export class RegistrationForm extends React.Component{
         return this.props
             .dispatch(newUser(user))
             .then(() => this.props.dispatch(login(username, password))) }
-            // .then(this.setState({msg: 'Thank you for registering. Please log in'})
-            // )}
 
     render() {
         if(this.props.loggedIn) {
@@ -44,7 +34,7 @@ export class RegistrationForm extends React.Component{
         <section style={ sectionStyle }>
             <div className="register-page">
                 <Link className="back-link" to="/signup">Back</Link>
-                {/* <p>{this.state.msg ? this.state.msg : ''}</p> */}
+        
                 <form 
                     className="form" 
                     onSubmit={this.props.handleSubmit(values =>
@@ -83,11 +73,9 @@ export class RegistrationForm extends React.Component{
                         type="submit">
                         REGISTER 
                     </button>
-
                     <br />
-
                 </form>
-                
+          
             </div>
         </section>
         )
